@@ -1,0 +1,8493 @@
+[
+  {
+    "id": "001",
+    "name": "Robe fleurie bohème",
+    "price": 89,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "bleu",
+      "rose"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.zara.com/robe-fleurie-boheme",
+    "image_url": "https://images.shop.com/products/001.jpg"
+  },
+  {
+    "id": "002",
+    "name": "Robe midi élégante",
+    "price": 65,
+    "brand": "H&M",
+    "category": "robe",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bordeaux",
+      "marine"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.hm.com/robe-midi-elegante",
+    "image_url": "https://images.shop.com/products/002.jpg"
+  },
+  {
+    "id": "003",
+    "name": "Robe de soirée longue",
+    "price": 145,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "rouge",
+      "emeraude"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.mango.com/robe-de-soiree-longue",
+    "image_url": "https://images.shop.com/products/003.jpg"
+  },
+  {
+    "id": "004",
+    "name": "Robe mariage ivoire",
+    "price": 220,
+    "brand": "Pronovias",
+    "category": "robe",
+    "style": [
+      "chic",
+      "mariage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "ivoire",
+      "blanc"
+    ],
+    "stock": false,
+    "rating": 4.9,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 10,
+    "url": "https://www.pronovias.com/robe-mariage-ivoire",
+    "image_url": "https://images.shop.com/products/004.jpg"
+  },
+  {
+    "id": "005",
+    "name": "Robe casual lin",
+    "price": 55,
+    "brand": "Uniqlo",
+    "category": "robe",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "vert",
+      "terracotta"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.uniqlo.com/robe-casual-lin",
+    "image_url": "https://images.shop.com/products/005.jpg"
+  },
+  {
+    "id": "006",
+    "name": "Robe sport zippée",
+    "price": 48,
+    "brand": "Nike",
+    "category": "robe",
+    "style": [
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "blanc",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.nike.com/robe-sport-zippee",
+    "image_url": "https://images.shop.com/products/006.jpg"
+  },
+  {
+    "id": "007",
+    "name": "Robe portefeuille fleurie",
+    "price": 72,
+    "brand": "H&M",
+    "category": "robe",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose",
+      "vert",
+      "jaune"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.hm.com/robe-portefeuille-fleurie",
+    "image_url": "https://images.shop.com/products/007.jpg"
+  },
+  {
+    "id": "008",
+    "name": "Robe pull en maille",
+    "price": 85,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "gris",
+      "ecru"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.mango.com/robe-pull-en-maille",
+    "image_url": "https://images.shop.com/products/008.jpg"
+  },
+  {
+    "id": "009",
+    "name": "Robe chemise longue",
+    "price": 68,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "bleu ciel",
+      "olive"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 15,
+    "url": "https://www.zara.com/robe-chemise-longue",
+    "image_url": "https://images.shop.com/products/009.jpg"
+  },
+  {
+    "id": "010",
+    "name": "Robe bustier soirée",
+    "price": 135,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bleu nuit",
+      "champagne"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 20,
+    "url": "https://www.mango.com/robe-bustier-soiree",
+    "image_url": "https://images.shop.com/products/010.jpg"
+  },
+  {
+    "id": "011",
+    "name": "Robe trapèze imprimée",
+    "price": 59,
+    "brand": "Stradivarius",
+    "category": "robe",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "multicolore",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 10,
+    "url": "https://www.stradivarius.com/robe-trapeze-imprimee",
+    "image_url": "https://images.shop.com/products/011.jpg"
+  },
+  {
+    "id": "012",
+    "name": "Robe fourreau noir",
+    "price": 110,
+    "brand": "Massimo Dutti",
+    "category": "robe",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "marine"
+    ],
+    "stock": false,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/robe-fourreau-noir",
+    "image_url": "https://images.shop.com/products/012.jpg"
+  },
+  {
+    "id": "013",
+    "name": "Mini robe en cuir",
+    "price": 125,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.zara.com/mini-robe-en-cuir",
+    "image_url": "https://images.shop.com/products/013.jpg"
+  },
+  {
+    "id": "014",
+    "name": "Robe longue plage",
+    "price": 45,
+    "brand": "H&M",
+    "category": "robe",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "turquoise",
+      "corail"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 10,
+    "url": "https://www.hm.com/robe-longue-plage",
+    "image_url": "https://images.shop.com/products/014.jpg"
+  },
+  {
+    "id": "015",
+    "name": "Robe velours côtelé",
+    "price": 78,
+    "brand": "Bershka",
+    "category": "robe",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bordeaux",
+      "vert",
+      "marron"
+    ],
+    "stock": false,
+    "rating": 3.9,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.bershka.com/robe-velours-cotele",
+    "image_url": "https://images.shop.com/products/015.jpg"
+  },
+  {
+    "id": "016",
+    "name": "Robe asymétrique créateur",
+    "price": 165,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.mango.com/robe-asymetrique-createur",
+    "image_url": "https://images.shop.com/products/016.jpg"
+  },
+  {
+    "id": "017",
+    "name": "Robe tunique brodée",
+    "price": 62,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "boheme",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.zara.com/robe-tunique-brodee",
+    "image_url": "https://images.shop.com/products/017.jpg"
+  },
+  {
+    "id": "018",
+    "name": "Robe à paillettes",
+    "price": 155,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "or",
+      "argent",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.mango.com/robe-a-paillettes",
+    "image_url": "https://images.shop.com/products/018.jpg"
+  },
+  {
+    "id": "019",
+    "name": "Robe blazer oversize",
+    "price": 92,
+    "brand": "H&M",
+    "category": "robe",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "gris",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.hm.com/robe-blazer-oversize",
+    "image_url": "https://images.shop.com/products/019.jpg"
+  },
+  {
+    "id": "020",
+    "name": "Robe épaules dénudées",
+    "price": 88,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu roi",
+      "rouge",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.zara.com/robe-epaules-denudees",
+    "image_url": "https://images.shop.com/products/020.jpg"
+  },
+  {
+    "id": "021",
+    "name": "Robe en dentelle",
+    "price": 140,
+    "brand": "Massimo Dutti",
+    "category": "robe",
+    "style": [
+      "mariage",
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "nude",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/robe-en-dentelle",
+    "image_url": "https://images.shop.com/products/021.jpg"
+  },
+  {
+    "id": "022",
+    "name": "Robe babydoll romantique",
+    "price": 65,
+    "brand": "Stradivarius",
+    "category": "robe",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose",
+      "lilas"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 20,
+    "url": "https://www.stradivarius.com/robe-babydoll-romantique",
+    "image_url": "https://images.shop.com/products/022.jpg"
+  },
+  {
+    "id": "023",
+    "name": "Robe lurex métallique",
+    "price": 115,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "or",
+      "argent",
+      "cuivre"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 20,
+    "url": "https://www.mango.com/robe-lurex-metallique",
+    "image_url": "https://images.shop.com/products/023.jpg"
+  },
+  {
+    "id": "024",
+    "name": "Robe col roulé tricot",
+    "price": 75,
+    "brand": "Uniqlo",
+    "category": "robe",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "gris",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.uniqlo.com/robe-col-roule-tricot",
+    "image_url": "https://images.shop.com/products/024.jpg"
+  },
+  {
+    "id": "025",
+    "name": "Robe en sergé imprimée",
+    "price": 58,
+    "brand": "Pull&Bear",
+    "category": "robe",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 10,
+    "url": "https://www.pullandbear.com/robe-en-serge-imprimee",
+    "image_url": "https://images.shop.com/products/025.jpg"
+  },
+  {
+    "id": "026",
+    "name": "Robe crochet estivale",
+    "price": 95,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "boheme",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "naturel"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 10,
+    "url": "https://www.zara.com/robe-crochet-estivale",
+    "image_url": "https://images.shop.com/products/026.jpg"
+  },
+  {
+    "id": "027",
+    "name": "Robe tailleur chic",
+    "price": 180,
+    "brand": "Massimo Dutti",
+    "category": "robe",
+    "style": [
+      "chic",
+      "travail",
+      "mariage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "crème",
+      "anthracite"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 10,
+    "url": "https://www.massimodutti.com/robe-tailleur-chic",
+    "image_url": "https://images.shop.com/products/027.jpg"
+  },
+  {
+    "id": "028",
+    "name": "Robe gitane à volants",
+    "price": 70,
+    "brand": "Stradivarius",
+    "category": "robe",
+    "style": [
+      "boheme",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rouge",
+      "noir",
+      "marine"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.stradivarius.com/robe-gitane-a-volants",
+    "image_url": "https://images.shop.com/products/028.jpg"
+  },
+  {
+    "id": "029",
+    "name": "Robe combi-short",
+    "price": 55,
+    "brand": "Bershka",
+    "category": "robe",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "kaki",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 3.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 10,
+    "url": "https://www.bershka.com/robe-combi-short",
+    "image_url": "https://images.shop.com/products/029.jpg"
+  },
+  {
+    "id": "030",
+    "name": "Robe en soie imprimée",
+    "price": 190,
+    "brand": "Massimo Dutti",
+    "category": "robe",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "fleuri",
+      "marine"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 15,
+    "url": "https://www.massimodutti.com/robe-en-soie-imprimee",
+    "image_url": "https://images.shop.com/products/030.jpg"
+  },
+  {
+    "id": "031",
+    "name": "Robe ample en coton",
+    "price": 42,
+    "brand": "H&M",
+    "category": "robe",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "bleu",
+      "rose poudré"
+    ],
+    "stock": true,
+    "rating": 3.6,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.hm.com/robe-ample-en-coton",
+    "image_url": "https://images.shop.com/products/031.jpg"
+  },
+  {
+    "id": "032",
+    "name": "Robe cache-coeur fleurie",
+    "price": 68,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "jaune",
+      "vert",
+      "corail"
+    ],
+    "stock": false,
+    "rating": 3.9,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 15,
+    "url": "https://www.zara.com/robe-cache-coeur-fleurie",
+    "image_url": "https://images.shop.com/products/032.jpg"
+  },
+  {
+    "id": "033",
+    "name": "Robe smoking luxe",
+    "price": 210,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "chic",
+      "soiree",
+      "mariage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "blanc"
+    ],
+    "stock": false,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.mango.com/robe-smoking-luxe",
+    "image_url": "https://images.shop.com/products/033.jpg"
+  },
+  {
+    "id": "034",
+    "name": "Robe à smocks brodée",
+    "price": 72,
+    "brand": "Stradivarius",
+    "category": "robe",
+    "style": [
+      "boheme",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "bleu",
+      "rouge"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.stradivarius.com/robe-a-smocks-brodee",
+    "image_url": "https://images.shop.com/products/034.jpg"
+  },
+  {
+    "id": "035",
+    "name": "Robe jersey maxi",
+    "price": 48,
+    "brand": "H&M",
+    "category": "robe",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "marine",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 20,
+    "url": "https://www.hm.com/robe-jersey-maxi",
+    "image_url": "https://images.shop.com/products/035.jpg"
+  },
+  {
+    "id": "036",
+    "name": "Robe chèque vichy",
+    "price": 58,
+    "brand": "Pull&Bear",
+    "category": "robe",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rouge",
+      "bleu",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 15,
+    "url": "https://www.pullandbear.com/robe-cheque-vichy",
+    "image_url": "https://images.shop.com/products/036.jpg"
+  },
+  {
+    "id": "037",
+    "name": "Robe en organza",
+    "price": 170,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "soiree",
+      "mariage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose poudré",
+      "blanc",
+      "lilas"
+    ],
+    "stock": false,
+    "rating": 4.4,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.mango.com/robe-en-organza",
+    "image_url": "https://images.shop.com/products/037.jpg"
+  },
+  {
+    "id": "038",
+    "name": "Robe débardeur côtelée",
+    "price": 38,
+    "brand": "Bershka",
+    "category": "robe",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "blanc",
+      "beige"
+    ],
+    "stock": false,
+    "rating": 4.0,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 10,
+    "url": "https://www.bershka.com/robe-debardeur-cotelee",
+    "image_url": "https://images.shop.com/products/038.jpg"
+  },
+  {
+    "id": "039",
+    "name": "Robe mousseline fluide",
+    "price": 105,
+    "brand": "Massimo Dutti",
+    "category": "robe",
+    "style": [
+      "chic",
+      "soiree",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "ivoire"
+    ],
+    "stock": false,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/robe-mousseline-fluide",
+    "image_url": "https://images.shop.com/products/039.jpg"
+  },
+  {
+    "id": "040",
+    "name": "Robe cargo utilitaire",
+    "price": 65,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.zara.com/robe-cargo-utilitaire",
+    "image_url": "https://images.shop.com/products/040.jpg"
+  },
+  {
+    "id": "041",
+    "name": "Robe tweed multicolore",
+    "price": 195,
+    "brand": "Massimo Dutti",
+    "category": "robe",
+    "style": [
+      "chic",
+      "travail",
+      "mariage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.massimodutti.com/robe-tweed-multicolore",
+    "image_url": "https://images.shop.com/products/041.jpg"
+  },
+  {
+    "id": "042",
+    "name": "Robe bohème maxi",
+    "price": 80,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "boheme",
+      "casual",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "terracotta",
+      "bleu",
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.mango.com/robe-boheme-maxi",
+    "image_url": "https://images.shop.com/products/042.jpg"
+  },
+  {
+    "id": "043",
+    "name": "Robe en velours rouge",
+    "price": 130,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rouge",
+      "bordeaux",
+      "vert sapin"
+    ],
+    "stock": false,
+    "rating": 4.4,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.mango.com/robe-en-velours-rouge",
+    "image_url": "https://images.shop.com/products/043.jpg"
+  },
+  {
+    "id": "044",
+    "name": "Robe transparente dentelle",
+    "price": 88,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "nude",
+      "blanc"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.zara.com/robe-transparente-dentelle",
+    "image_url": "https://images.shop.com/products/044.jpg"
+  },
+  {
+    "id": "045",
+    "name": "Robe en coton brodé",
+    "price": 62,
+    "brand": "Stradivarius",
+    "category": "robe",
+    "style": [
+      "boheme",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.stradivarius.com/robe-en-coton-brode",
+    "image_url": "https://images.shop.com/products/045.jpg"
+  },
+  {
+    "id": "046",
+    "name": "Robe dos nu soirée",
+    "price": 142,
+    "brand": "Mango",
+    "category": "robe",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "rouge",
+      "emeraude"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 15,
+    "url": "https://www.mango.com/robe-dos-nu-soiree",
+    "image_url": "https://images.shop.com/products/046.jpg"
+  },
+  {
+    "id": "047",
+    "name": "Robe structurée buste",
+    "price": 122,
+    "brand": "Massimo Dutti",
+    "category": "robe",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "gris",
+      "marine"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.massimodutti.com/robe-structuree-buste",
+    "image_url": "https://images.shop.com/products/047.jpg"
+  },
+  {
+    "id": "048",
+    "name": "Robe à nœud festive",
+    "price": 88,
+    "brand": "H&M",
+    "category": "robe",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "fuchsia",
+      "turquoise",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 15,
+    "url": "https://www.hm.com/robe-a-nœud-festive",
+    "image_url": "https://images.shop.com/products/048.jpg"
+  },
+  {
+    "id": "049",
+    "name": "Robe plissée midi",
+    "price": 95,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose poudré",
+      "camel",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 25,
+    "url": "https://www.zara.com/robe-plissee-midi",
+    "image_url": "https://images.shop.com/products/049.jpg"
+  },
+  {
+    "id": "050",
+    "name": "Robe wrap en jersey",
+    "price": 72,
+    "brand": "Uniqlo",
+    "category": "robe",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "marine",
+      "noir",
+      "bordeaux"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.uniqlo.com/robe-wrap-en-jersey",
+    "image_url": "https://images.shop.com/products/050.jpg"
+  },
+  {
+    "id": "051",
+    "name": "Robe nuisette soyeuse",
+    "price": 115,
+    "brand": "Massimo Dutti",
+    "category": "robe",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "ivoire",
+      "noir",
+      "bordeaux"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/robe-nuisette-soyeuse",
+    "image_url": "https://images.shop.com/products/051.jpg"
+  },
+  {
+    "id": "052",
+    "name": "Blazer structuré camel",
+    "price": 120,
+    "brand": "Mango",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.mango.com/blazer-structure-camel",
+    "image_url": "https://images.shop.com/products/052.jpg"
+  },
+  {
+    "id": "053",
+    "name": "Chemise blanche en soie",
+    "price": 95,
+    "brand": "Zara",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.zara.com/chemise-blanche-en-soie",
+    "image_url": "https://images.shop.com/products/053.jpg"
+  },
+  {
+    "id": "054",
+    "name": "T-shirt coton basique",
+    "price": 25,
+    "brand": "H&M",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bleu"
+    ],
+    "stock": false,
+    "rating": 3.6,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.hm.com/t-shirt-coton-basique",
+    "image_url": "https://images.shop.com/products/054.jpg"
+  },
+  {
+    "id": "055",
+    "name": "Top satiné soirée",
+    "price": 75,
+    "brand": "Zara",
+    "category": "haut",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "camel"
+    ],
+    "stock": false,
+    "rating": 3.9,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.zara.com/top-satine-soiree",
+    "image_url": "https://images.shop.com/products/055.jpg"
+  },
+  {
+    "id": "056",
+    "name": "Sweat hoodie oversize",
+    "price": 59,
+    "brand": "Nike",
+    "category": "haut",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 20,
+    "url": "https://www.nike.com/sweat-hoodie-oversize",
+    "image_url": "https://images.shop.com/products/056.jpg"
+  },
+  {
+    "id": "057",
+    "name": "Blazer oversize blanc",
+    "price": 98,
+    "brand": "H&M",
+    "category": "haut",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.hm.com/blazer-oversize-blanc",
+    "image_url": "https://images.shop.com/products/057.jpg"
+  },
+  {
+    "id": "058",
+    "name": "Blouse romantique dentelle",
+    "price": 78,
+    "brand": "Stradivarius",
+    "category": "haut",
+    "style": [
+      "chic",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.stradivarius.com/blouse-romantique-dentelle",
+    "image_url": "https://images.shop.com/products/058.jpg"
+  },
+  {
+    "id": "059",
+    "name": "Crop top sport",
+    "price": 38,
+    "brand": "Adidas",
+    "category": "haut",
+    "style": [
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.adidas.com/crop-top-sport",
+    "image_url": "https://images.shop.com/products/059.jpg"
+  },
+  {
+    "id": "060",
+    "name": "Chemisier en popeline",
+    "price": 65,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "camel"
+    ],
+    "stock": false,
+    "rating": 4.7,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.massimodutti.com/chemisier-en-popeline",
+    "image_url": "https://images.shop.com/products/060.jpg"
+  },
+  {
+    "id": "061",
+    "name": "Pull en cachemire",
+    "price": 185,
+    "brand": "Uniqlo",
+    "category": "haut",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.uniqlo.com/pull-en-cachemire",
+    "image_url": "https://images.shop.com/products/061.jpg"
+  },
+  {
+    "id": "062",
+    "name": "Cardigan mohair",
+    "price": 89,
+    "brand": "Zara",
+    "category": "haut",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.zara.com/cardigan-mohair",
+    "image_url": "https://images.shop.com/products/062.jpg"
+  },
+  {
+    "id": "063",
+    "name": "Top à bretelles en satin",
+    "price": 55,
+    "brand": "H&M",
+    "category": "haut",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.hm.com/top-a-bretelles-en-satin",
+    "image_url": "https://images.shop.com/products/063.jpg"
+  },
+  {
+    "id": "064",
+    "name": "Veste en jean",
+    "price": 75,
+    "brand": "Pull&Bear",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.pullandbear.com/veste-en-jean",
+    "image_url": "https://images.shop.com/products/064.jpg"
+  },
+  {
+    "id": "065",
+    "name": "Chemise en lin",
+    "price": 68,
+    "brand": "Uniqlo",
+    "category": "haut",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.uniqlo.com/chemise-en-lin",
+    "image_url": "https://images.shop.com/products/065.jpg"
+  },
+  {
+    "id": "066",
+    "name": "Pull rayé marin",
+    "price": 58,
+    "brand": "H&M",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.hm.com/pull-raye-marin",
+    "image_url": "https://images.shop.com/products/066.jpg"
+  },
+  {
+    "id": "067",
+    "name": "Top bandeau imprimé",
+    "price": 32,
+    "brand": "Bershka",
+    "category": "haut",
+    "style": [
+      "casual",
+      "sport",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.bershka.com/top-bandeau-imprime",
+    "image_url": "https://images.shop.com/products/067.jpg"
+  },
+  {
+    "id": "068",
+    "name": "Gilet côtelé oversize",
+    "price": 65,
+    "brand": "Zara",
+    "category": "haut",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "blanc"
+    ],
+    "stock": false,
+    "rating": 4.4,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.zara.com/gilet-cotele-oversize",
+    "image_url": "https://images.shop.com/products/068.jpg"
+  },
+  {
+    "id": "069",
+    "name": "Veste en cuir",
+    "price": 195,
+    "brand": "Mango",
+    "category": "haut",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.mango.com/veste-en-cuir",
+    "image_url": "https://images.shop.com/products/069.jpg"
+  },
+  {
+    "id": "070",
+    "name": "Blouse en voile transparente",
+    "price": 72,
+    "brand": "Stradivarius",
+    "category": "haut",
+    "style": [
+      "boheme",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.stradivarius.com/blouse-en-voile-transparente",
+    "image_url": "https://images.shop.com/products/070.jpg"
+  },
+  {
+    "id": "071",
+    "name": "Top crochet estival",
+    "price": 45,
+    "brand": "Zara",
+    "category": "haut",
+    "style": [
+      "boheme",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "bleu"
+    ],
+    "stock": false,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.zara.com/top-crochet-estival",
+    "image_url": "https://images.shop.com/products/071.jpg"
+  },
+  {
+    "id": "072",
+    "name": "Chemise à carreaux flanelle",
+    "price": 55,
+    "brand": "Pull&Bear",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 20,
+    "url": "https://www.pullandbear.com/chemise-a-carreaux-flanelle",
+    "image_url": "https://images.shop.com/products/072.jpg"
+  },
+  {
+    "id": "073",
+    "name": "Sweatshirt brodé",
+    "price": 69,
+    "brand": "Nike",
+    "category": "haut",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "bleu"
+    ],
+    "stock": false,
+    "rating": 4.4,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.nike.com/sweatshirt-brode",
+    "image_url": "https://images.shop.com/products/073.jpg"
+  },
+  {
+    "id": "074",
+    "name": "Cardigan long cocooning",
+    "price": 88,
+    "brand": "Mango",
+    "category": "haut",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 20,
+    "url": "https://www.mango.com/cardigan-long-cocooning",
+    "image_url": "https://images.shop.com/products/074.jpg"
+  },
+  {
+    "id": "075",
+    "name": "Body à manches longues",
+    "price": 42,
+    "brand": "H&M",
+    "category": "haut",
+    "style": [
+      "casual",
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.hm.com/body-a-manches-longues",
+    "image_url": "https://images.shop.com/products/075.jpg"
+  },
+  {
+    "id": "076",
+    "name": "Manteau long camel",
+    "price": 235,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.massimodutti.com/manteau-long-camel",
+    "image_url": "https://images.shop.com/products/076.jpg"
+  },
+  {
+    "id": "077",
+    "name": "Veste blazer à carreaux",
+    "price": 145,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/veste-blazer-a-carreaux",
+    "image_url": "https://images.shop.com/products/077.jpg"
+  },
+  {
+    "id": "078",
+    "name": "Top en jersey brossé",
+    "price": 35,
+    "brand": "Uniqlo",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.uniqlo.com/top-en-jersey-brosse",
+    "image_url": "https://images.shop.com/products/078.jpg"
+  },
+  {
+    "id": "079",
+    "name": "Chemise habillée",
+    "price": 85,
+    "brand": "Zara",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.zara.com/chemise-habillee",
+    "image_url": "https://images.shop.com/products/079.jpg"
+  },
+  {
+    "id": "080",
+    "name": "Pull à col V en laine",
+    "price": 95,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "casual",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.massimodutti.com/pull-a-col-v-en-laine",
+    "image_url": "https://images.shop.com/products/080.jpg"
+  },
+  {
+    "id": "081",
+    "name": "Brassière de sport",
+    "price": 45,
+    "brand": "Nike",
+    "category": "haut",
+    "style": [
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.nike.com/brassiere-de-sport",
+    "image_url": "https://images.shop.com/products/081.jpg"
+  },
+  {
+    "id": "082",
+    "name": "Tunique longue",
+    "price": 62,
+    "brand": "Stradivarius",
+    "category": "haut",
+    "style": [
+      "boheme",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.stradivarius.com/tunique-longue",
+    "image_url": "https://images.shop.com/products/082.jpg"
+  },
+  {
+    "id": "083",
+    "name": "Top froncé bustier",
+    "price": 58,
+    "brand": "Mango",
+    "category": "haut",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.mango.com/top-fronce-bustier",
+    "image_url": "https://images.shop.com/products/083.jpg"
+  },
+  {
+    "id": "084",
+    "name": "Veste en tweed",
+    "price": 175,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 4.4,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.massimodutti.com/veste-en-tweed",
+    "image_url": "https://images.shop.com/products/084.jpg"
+  },
+  {
+    "id": "085",
+    "name": "Crop hoodie pastel",
+    "price": 52,
+    "brand": "Bershka",
+    "category": "haut",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.bershka.com/crop-hoodie-pastel",
+    "image_url": "https://images.shop.com/products/085.jpg"
+  },
+  {
+    "id": "086",
+    "name": "Chemisier à pois",
+    "price": 68,
+    "brand": "Zara",
+    "category": "haut",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "blanc"
+    ],
+    "stock": false,
+    "rating": 4.2,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 20,
+    "url": "https://www.zara.com/chemisier-a-pois",
+    "image_url": "https://images.shop.com/products/086.jpg"
+  },
+  {
+    "id": "087",
+    "name": "Chemise blanche Oxford",
+    "price": 75,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/chemise-blanche-oxford",
+    "image_url": "https://images.shop.com/products/087.jpg"
+  },
+  {
+    "id": "088",
+    "name": "T-shirt basique blanc",
+    "price": 22,
+    "brand": "H&M Man",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.hm.com/t-shirt-basique-blanc",
+    "image_url": "https://images.shop.com/products/088.jpg"
+  },
+  {
+    "id": "089",
+    "name": "Polo classique",
+    "price": 65,
+    "brand": "Zara Man",
+    "category": "haut",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.zara.com/polo-classique",
+    "image_url": "https://images.shop.com/products/089.jpg"
+  },
+  {
+    "id": "090",
+    "name": "Sweat à capuche gris",
+    "price": 58,
+    "brand": "Nike",
+    "category": "haut",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.nike.com/sweat-a-capuche-gris",
+    "image_url": "https://images.shop.com/products/090.jpg"
+  },
+  {
+    "id": "091",
+    "name": "Chemise en lin",
+    "price": 62,
+    "brand": "Uniqlo",
+    "category": "haut",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.uniqlo.com/chemise-en-lin",
+    "image_url": "https://images.shop.com/products/091.jpg"
+  },
+  {
+    "id": "092",
+    "name": "Blazer slim",
+    "price": 145,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 20,
+    "url": "https://www.massimodutti.com/blazer-slim",
+    "image_url": "https://images.shop.com/products/092.jpg"
+  },
+  {
+    "id": "093",
+    "name": "Pull over col rond",
+    "price": 78,
+    "brand": "Selected",
+    "category": "haut",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.selectedhomme.com/pull-over-col-rond",
+    "image_url": "https://images.shop.com/products/093.jpg"
+  },
+  {
+    "id": "094",
+    "name": "Veste en jean",
+    "price": 82,
+    "brand": "Jack & Jones",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.jackjones.com/veste-en-jean",
+    "image_url": "https://images.shop.com/products/094.jpg"
+  },
+  {
+    "id": "095",
+    "name": "Chemise slim à carreaux",
+    "price": 65,
+    "brand": "Only & Sons",
+    "category": "haut",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.onlyandsons.com/chemise-slim-a-carreaux",
+    "image_url": "https://images.shop.com/products/095.jpg"
+  },
+  {
+    "id": "096",
+    "name": "T-shirt oversize",
+    "price": 35,
+    "brand": "Bershka Man",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.bershka.com/t-shirt-oversize",
+    "image_url": "https://images.shop.com/products/096.jpg"
+  },
+  {
+    "id": "097",
+    "name": "Manteau long laine",
+    "price": 265,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/manteau-long-laine",
+    "image_url": "https://images.shop.com/products/097.jpg"
+  },
+  {
+    "id": "098",
+    "name": "Doudoune légère",
+    "price": 110,
+    "brand": "Nike",
+    "category": "haut",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.nike.com/doudoune-legere",
+    "image_url": "https://images.shop.com/products/098.jpg"
+  },
+  {
+    "id": "099",
+    "name": "Cardigan texturé",
+    "price": 88,
+    "brand": "Selected",
+    "category": "haut",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.selectedhomme.com/cardigan-texture",
+    "image_url": "https://images.shop.com/products/099.jpg"
+  },
+  {
+    "id": "100",
+    "name": "Chemise hawaïenne",
+    "price": 55,
+    "brand": "Pull&Bear",
+    "category": "haut",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.pullandbear.com/chemise-hawaïenne",
+    "image_url": "https://images.shop.com/products/100.jpg"
+  },
+  {
+    "id": "101",
+    "name": "Pull à col roulé",
+    "price": 98,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/pull-a-col-roule",
+    "image_url": "https://images.shop.com/products/101.jpg"
+  },
+  {
+    "id": "102",
+    "name": "Veste de costume",
+    "price": 195,
+    "brand": "Zara Man",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail",
+      "soiree",
+      "mariage"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "blanc"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.zara.com/veste-de-costume",
+    "image_url": "https://images.shop.com/products/102.jpg"
+  },
+  {
+    "id": "103",
+    "name": "T-shirt graphique",
+    "price": 38,
+    "brand": "Bershka Man",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "gris"
+    ],
+    "stock": false,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.bershka.com/t-shirt-graphique",
+    "image_url": "https://images.shop.com/products/103.jpg"
+  },
+  {
+    "id": "104",
+    "name": "Chemise de soirée",
+    "price": 95,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/chemise-de-soiree",
+    "image_url": "https://images.shop.com/products/104.jpg"
+  },
+  {
+    "id": "105",
+    "name": "Hoodie zip tech",
+    "price": 72,
+    "brand": "Adidas",
+    "category": "haut",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.adidas.com/hoodie-zip-tech",
+    "image_url": "https://images.shop.com/products/105.jpg"
+  },
+  {
+    "id": "106",
+    "name": "Veste en cuir biker",
+    "price": 225,
+    "brand": "Zara Man",
+    "category": "haut",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "gris"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 20,
+    "url": "https://www.zara.com/veste-en-cuir-biker",
+    "image_url": "https://images.shop.com/products/106.jpg"
+  },
+  {
+    "id": "107",
+    "name": "Chemise à rayures",
+    "price": 68,
+    "brand": "Jack & Jones",
+    "category": "haut",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.jackjones.com/chemise-a-rayures",
+    "image_url": "https://images.shop.com/products/107.jpg"
+  },
+  {
+    "id": "108",
+    "name": "Pull Shetland",
+    "price": 112,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/pull-shetland",
+    "image_url": "https://images.shop.com/products/108.jpg"
+  },
+  {
+    "id": "109",
+    "name": "T-shirt de sport",
+    "price": 35,
+    "brand": "Adidas",
+    "category": "haut",
+    "style": [
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.adidas.com/t-shirt-de-sport",
+    "image_url": "https://images.shop.com/products/109.jpg"
+  },
+  {
+    "id": "110",
+    "name": "Parka imperméable",
+    "price": 148,
+    "brand": "Jack & Jones",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.jackjones.com/parka-impermeable",
+    "image_url": "https://images.shop.com/products/110.jpg"
+  },
+  {
+    "id": "111",
+    "name": "Gilet sans manches",
+    "price": 78,
+    "brand": "Selected",
+    "category": "haut",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "blanc"
+    ],
+    "stock": false,
+    "rating": 3.9,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.selectedhomme.com/gilet-sans-manches",
+    "image_url": "https://images.shop.com/products/111.jpg"
+  },
+  {
+    "id": "112",
+    "name": "Sweatshirt col V",
+    "price": 62,
+    "brand": "H&M Man",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 3.6,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.hm.com/sweatshirt-col-v",
+    "image_url": "https://images.shop.com/products/112.jpg"
+  },
+  {
+    "id": "113",
+    "name": "Chemise brodée casual",
+    "price": 75,
+    "brand": "Zara Man",
+    "category": "haut",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "bleu"
+    ],
+    "stock": false,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.zara.com/chemise-brodee-casual",
+    "image_url": "https://images.shop.com/products/113.jpg"
+  },
+  {
+    "id": "114",
+    "name": "Veste style workwear",
+    "price": 118,
+    "brand": "Jack & Jones",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 3.7,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.jackjones.com/veste-style-workwear",
+    "image_url": "https://images.shop.com/products/114.jpg"
+  },
+  {
+    "id": "115",
+    "name": "Pull en cachemire",
+    "price": 198,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.massimodutti.com/pull-en-cachemire",
+    "image_url": "https://images.shop.com/products/115.jpg"
+  },
+  {
+    "id": "116",
+    "name": "T-shirt slim col V",
+    "price": 28,
+    "brand": "Uniqlo",
+    "category": "haut",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "camel",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.uniqlo.com/t-shirt-slim-col-v",
+    "image_url": "https://images.shop.com/products/116.jpg"
+  },
+  {
+    "id": "117",
+    "name": "Chemise en flanelle",
+    "price": 58,
+    "brand": "Only & Sons",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.onlyandsons.com/chemise-en-flanelle",
+    "image_url": "https://images.shop.com/products/117.jpg"
+  },
+  {
+    "id": "118",
+    "name": "Blouson bomber",
+    "price": 115,
+    "brand": "Zara Man",
+    "category": "haut",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 15,
+    "url": "https://www.zara.com/blouson-bomber",
+    "image_url": "https://images.shop.com/products/118.jpg"
+  },
+  {
+    "id": "119",
+    "name": "Chemise linen mix",
+    "price": 72,
+    "brand": "Selected",
+    "category": "haut",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.selectedhomme.com/chemise-linen-mix",
+    "image_url": "https://images.shop.com/products/119.jpg"
+  },
+  {
+    "id": "120",
+    "name": "Cardigan boutonné",
+    "price": 92,
+    "brand": "Massimo Dutti",
+    "category": "haut",
+    "style": [
+      "chic",
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/cardigan-boutonne",
+    "image_url": "https://images.shop.com/products/120.jpg"
+  },
+  {
+    "id": "121",
+    "name": "T-shirt tie-dye",
+    "price": 32,
+    "brand": "Pull&Bear",
+    "category": "haut",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 25,
+    "url": "https://www.pullandbear.com/t-shirt-tie-dye",
+    "image_url": "https://images.shop.com/products/121.jpg"
+  },
+  {
+    "id": "122",
+    "name": "Jean slim taille haute",
+    "price": 79,
+    "brand": "Zara",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.zara.com/jean-slim-taille-haute",
+    "image_url": "https://images.shop.com/products/122.jpg"
+  },
+  {
+    "id": "123",
+    "name": "Pantalon tailleur beige",
+    "price": 110,
+    "brand": "Mango",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 15,
+    "url": "https://www.mango.com/pantalon-tailleur-beige",
+    "image_url": "https://images.shop.com/products/123.jpg"
+  },
+  {
+    "id": "124",
+    "name": "Cargo kaki décontracté",
+    "price": 65,
+    "brand": "H&M",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.hm.com/cargo-kaki-decontracte",
+    "image_url": "https://images.shop.com/products/124.jpg"
+  },
+  {
+    "id": "125",
+    "name": "Legging sport taille haute",
+    "price": 45,
+    "brand": "Adidas",
+    "category": "pantalon",
+    "style": [
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.adidas.com/legging-sport-taille-haute",
+    "image_url": "https://images.shop.com/products/125.jpg"
+  },
+  {
+    "id": "126",
+    "name": "Jupe midi plissée",
+    "price": 75,
+    "brand": "Mango",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "kaki"
+    ],
+    "stock": false,
+    "rating": 4.0,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 15,
+    "url": "https://www.mango.com/jupe-midi-plissee",
+    "image_url": "https://images.shop.com/products/126.jpg"
+  },
+  {
+    "id": "127",
+    "name": "Short en jean",
+    "price": 42,
+    "brand": "Bershka",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 15,
+    "url": "https://www.bershka.com/short-en-jean",
+    "image_url": "https://images.shop.com/products/127.jpg"
+  },
+  {
+    "id": "128",
+    "name": "Pantalon large en lin",
+    "price": 88,
+    "brand": "Zara",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.zara.com/pantalon-large-en-lin",
+    "image_url": "https://images.shop.com/products/128.jpg"
+  },
+  {
+    "id": "129",
+    "name": "Jupe crayon noire",
+    "price": 85,
+    "brand": "Massimo Dutti",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "kaki"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/jupe-crayon-noire",
+    "image_url": "https://images.shop.com/products/129.jpg"
+  },
+  {
+    "id": "130",
+    "name": "Pantalon palazzo fluide",
+    "price": 95,
+    "brand": "Mango",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 10,
+    "url": "https://www.mango.com/pantalon-palazzo-fluide",
+    "image_url": "https://images.shop.com/products/130.jpg"
+  },
+  {
+    "id": "131",
+    "name": "Short sport",
+    "price": 35,
+    "brand": "Nike",
+    "category": "pantalon",
+    "style": [
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.nike.com/short-sport",
+    "image_url": "https://images.shop.com/products/131.jpg"
+  },
+  {
+    "id": "132",
+    "name": "Jupe longue imprimée",
+    "price": 72,
+    "brand": "Stradivarius",
+    "category": "pantalon",
+    "style": [
+      "boheme",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.stradivarius.com/jupe-longue-imprimee",
+    "image_url": "https://images.shop.com/products/132.jpg"
+  },
+  {
+    "id": "133",
+    "name": "Jean boyfriend",
+    "price": 68,
+    "brand": "Pull&Bear",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "beige"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 10,
+    "url": "https://www.pullandbear.com/jean-boyfriend",
+    "image_url": "https://images.shop.com/products/133.jpg"
+  },
+  {
+    "id": "134",
+    "name": "Pantalon en cuir",
+    "price": 155,
+    "brand": "Zara",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.zara.com/pantalon-en-cuir",
+    "image_url": "https://images.shop.com/products/134.jpg"
+  },
+  {
+    "id": "135",
+    "name": "Mini jupe en jean",
+    "price": 45,
+    "brand": "Bershka",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.bershka.com/mini-jupe-en-jean",
+    "image_url": "https://images.shop.com/products/135.jpg"
+  },
+  {
+    "id": "136",
+    "name": "Jogger en coton",
+    "price": 48,
+    "brand": "Nike",
+    "category": "pantalon",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.nike.com/jogger-en-coton",
+    "image_url": "https://images.shop.com/products/136.jpg"
+  },
+  {
+    "id": "137",
+    "name": "Pantalon à carreaux",
+    "price": 115,
+    "brand": "Massimo Dutti",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/pantalon-a-carreaux",
+    "image_url": "https://images.shop.com/products/137.jpg"
+  },
+  {
+    "id": "138",
+    "name": "Jupe portefeuille",
+    "price": 62,
+    "brand": "H&M",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 15,
+    "url": "https://www.hm.com/jupe-portefeuille",
+    "image_url": "https://images.shop.com/products/138.jpg"
+  },
+  {
+    "id": "139",
+    "name": "Short cycliste",
+    "price": 38,
+    "brand": "Adidas",
+    "category": "pantalon",
+    "style": [
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.adidas.com/short-cycliste",
+    "image_url": "https://images.shop.com/products/139.jpg"
+  },
+  {
+    "id": "140",
+    "name": "Jean flare vintage",
+    "price": 85,
+    "brand": "Zara",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.zara.com/jean-flare-vintage",
+    "image_url": "https://images.shop.com/products/140.jpg"
+  },
+  {
+    "id": "141",
+    "name": "Jupe en suède",
+    "price": 105,
+    "brand": "Mango",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.mango.com/jupe-en-suede",
+    "image_url": "https://images.shop.com/products/141.jpg"
+  },
+  {
+    "id": "142",
+    "name": "Pantalon de jogging",
+    "price": 55,
+    "brand": "Nike",
+    "category": "pantalon",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "kaki"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.nike.com/pantalon-de-jogging",
+    "image_url": "https://images.shop.com/products/142.jpg"
+  },
+  {
+    "id": "143",
+    "name": "Jupe évasée en tweed",
+    "price": 125,
+    "brand": "Massimo Dutti",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail",
+      "mariage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/jupe-evasee-en-tweed",
+    "image_url": "https://images.shop.com/products/143.jpg"
+  },
+  {
+    "id": "144",
+    "name": "Jean Mom taille haute",
+    "price": 72,
+    "brand": "H&M",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.hm.com/jean-mom-taille-haute",
+    "image_url": "https://images.shop.com/products/144.jpg"
+  },
+  {
+    "id": "145",
+    "name": "Pantacourt en lin",
+    "price": 58,
+    "brand": "Uniqlo",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 10,
+    "url": "https://www.uniqlo.com/pantacourt-en-lin",
+    "image_url": "https://images.shop.com/products/145.jpg"
+  },
+  {
+    "id": "146",
+    "name": "Legging en velours",
+    "price": 52,
+    "brand": "Zara",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.zara.com/legging-en-velours",
+    "image_url": "https://images.shop.com/products/146.jpg"
+  },
+  {
+    "id": "147",
+    "name": "Jean slim indigo",
+    "price": 75,
+    "brand": "Zara Man",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 10,
+    "url": "https://www.zara.com/jean-slim-indigo",
+    "image_url": "https://images.shop.com/products/147.jpg"
+  },
+  {
+    "id": "148",
+    "name": "Pantalon de costume gris",
+    "price": 145,
+    "brand": "Massimo Dutti",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail",
+      "soiree",
+      "mariage"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/pantalon-de-costume-gris",
+    "image_url": "https://images.shop.com/products/148.jpg"
+  },
+  {
+    "id": "149",
+    "name": "Chino beige",
+    "price": 68,
+    "brand": "Selected",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "kaki"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.selectedhomme.com/chino-beige",
+    "image_url": "https://images.shop.com/products/149.jpg"
+  },
+  {
+    "id": "150",
+    "name": "Short de sport",
+    "price": 32,
+    "brand": "Nike",
+    "category": "pantalon",
+    "style": [
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.nike.com/short-de-sport",
+    "image_url": "https://images.shop.com/products/150.jpg"
+  },
+  {
+    "id": "151",
+    "name": "Pantalon large coton",
+    "price": 72,
+    "brand": "Jack & Jones",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.jackjones.com/pantalon-large-coton",
+    "image_url": "https://images.shop.com/products/151.jpg"
+  },
+  {
+    "id": "152",
+    "name": "Jean destroy",
+    "price": 62,
+    "brand": "Bershka Man",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.bershka.com/jean-destroy",
+    "image_url": "https://images.shop.com/products/152.jpg"
+  },
+  {
+    "id": "153",
+    "name": "Pantalon en lin",
+    "price": 78,
+    "brand": "Uniqlo",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.uniqlo.com/pantalon-en-lin",
+    "image_url": "https://images.shop.com/products/153.jpg"
+  },
+  {
+    "id": "154",
+    "name": "Jogger technique",
+    "price": 55,
+    "brand": "Adidas",
+    "category": "pantalon",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.adidas.com/jogger-technique",
+    "image_url": "https://images.shop.com/products/154.jpg"
+  },
+  {
+    "id": "155",
+    "name": "Chino slim",
+    "price": 75,
+    "brand": "Only & Sons",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.onlyandsons.com/chino-slim",
+    "image_url": "https://images.shop.com/products/155.jpg"
+  },
+  {
+    "id": "156",
+    "name": "Bermuda en jean",
+    "price": 48,
+    "brand": "Pull&Bear",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.pullandbear.com/bermuda-en-jean",
+    "image_url": "https://images.shop.com/products/156.jpg"
+  },
+  {
+    "id": "157",
+    "name": "Pantalon à pinces",
+    "price": 165,
+    "brand": "Massimo Dutti",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/pantalon-a-pinces",
+    "image_url": "https://images.shop.com/products/157.jpg"
+  },
+  {
+    "id": "158",
+    "name": "Jean bootcut",
+    "price": 68,
+    "brand": "Jack & Jones",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 10,
+    "url": "https://www.jackjones.com/jean-bootcut",
+    "image_url": "https://images.shop.com/products/158.jpg"
+  },
+  {
+    "id": "159",
+    "name": "Short cargo",
+    "price": 52,
+    "brand": "H&M Man",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "kaki"
+    ],
+    "stock": true,
+    "rating": 3.6,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 15,
+    "url": "https://www.hm.com/short-cargo",
+    "image_url": "https://images.shop.com/products/159.jpg"
+  },
+  {
+    "id": "160",
+    "name": "Pantalon de jogging",
+    "price": 45,
+    "brand": "Nike",
+    "category": "pantalon",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.nike.com/pantalon-de-jogging",
+    "image_url": "https://images.shop.com/products/160.jpg"
+  },
+  {
+    "id": "161",
+    "name": "Pantalon velours côtelé",
+    "price": 88,
+    "brand": "Selected",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "kaki"
+    ],
+    "stock": false,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.selectedhomme.com/pantalon-velours-cotele",
+    "image_url": "https://images.shop.com/products/161.jpg"
+  },
+  {
+    "id": "162",
+    "name": "Chino à carreaux",
+    "price": 78,
+    "brand": "Zara Man",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "gris",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 10,
+    "url": "https://www.zara.com/chino-a-carreaux",
+    "image_url": "https://images.shop.com/products/162.jpg"
+  },
+  {
+    "id": "163",
+    "name": "Jean straight",
+    "price": 72,
+    "brand": "Uniqlo",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 10,
+    "url": "https://www.uniqlo.com/jean-straight",
+    "image_url": "https://images.shop.com/products/163.jpg"
+  },
+  {
+    "id": "164",
+    "name": "Pantalon imperméable sport",
+    "price": 98,
+    "brand": "Adidas",
+    "category": "pantalon",
+    "style": [
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "kaki",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.adidas.com/pantalon-impermeable-sport",
+    "image_url": "https://images.shop.com/products/164.jpg"
+  },
+  {
+    "id": "165",
+    "name": "Pantalon de costume marine",
+    "price": 155,
+    "brand": "Massimo Dutti",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/pantalon-de-costume-marine",
+    "image_url": "https://images.shop.com/products/165.jpg"
+  },
+  {
+    "id": "166",
+    "name": "Short de bain",
+    "price": 38,
+    "brand": "Nike",
+    "category": "pantalon",
+    "style": [
+      "plage",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 25,
+    "url": "https://www.nike.com/short-de-bain",
+    "image_url": "https://images.shop.com/products/166.jpg"
+  },
+  {
+    "id": "167",
+    "name": "Jean tapered",
+    "price": 65,
+    "brand": "Jack & Jones",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.jackjones.com/jean-tapered",
+    "image_url": "https://images.shop.com/products/167.jpg"
+  },
+  {
+    "id": "168",
+    "name": "Pantalon en flanelle",
+    "price": 110,
+    "brand": "Massimo Dutti",
+    "category": "pantalon",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "bleu"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/pantalon-en-flanelle",
+    "image_url": "https://images.shop.com/products/168.jpg"
+  },
+  {
+    "id": "169",
+    "name": "Cargo multi-poches",
+    "price": 78,
+    "brand": "Bershka Man",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.6,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.bershka.com/cargo-multi-poches",
+    "image_url": "https://images.shop.com/products/169.jpg"
+  },
+  {
+    "id": "170",
+    "name": "Pantalon de yoga",
+    "price": 42,
+    "brand": "Adidas",
+    "category": "pantalon",
+    "style": [
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "kaki"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 20,
+    "url": "https://www.adidas.com/pantalon-de-yoga",
+    "image_url": "https://images.shop.com/products/170.jpg"
+  },
+  {
+    "id": "171",
+    "name": "Jean wide leg",
+    "price": 72,
+    "brand": "H&M Man",
+    "category": "pantalon",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 15,
+    "url": "https://www.hm.com/jean-wide-leg",
+    "image_url": "https://images.shop.com/products/171.jpg"
+  },
+  {
+    "id": "172",
+    "name": "Sneakers blanches",
+    "price": 95,
+    "brand": "Nike",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "nude",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 10,
+    "url": "https://www.nike.com/sneakers-blanches",
+    "image_url": "https://images.shop.com/products/172.jpg"
+  },
+  {
+    "id": "173",
+    "name": "Escarpins nude",
+    "price": 85,
+    "brand": "Zara",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "nude",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.zara.com/escarpins-nude",
+    "image_url": "https://images.shop.com/products/173.jpg"
+  },
+  {
+    "id": "174",
+    "name": "Sandales plates dorées",
+    "price": 55,
+    "brand": "Mango",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "boheme",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "blanc",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 10,
+    "url": "https://www.mango.com/sandales-plates-dorees",
+    "image_url": "https://images.shop.com/products/174.jpg"
+  },
+  {
+    "id": "175",
+    "name": "Bottines chelsea noires",
+    "price": 130,
+    "brand": "Mango",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.mango.com/bottines-chelsea-noires",
+    "image_url": "https://images.shop.com/products/175.jpg"
+  },
+  {
+    "id": "176",
+    "name": "Escarpins dorés mariage",
+    "price": 120,
+    "brand": "Mango",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "mariage",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "noir",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.mango.com/escarpins-dores-mariage",
+    "image_url": "https://images.shop.com/products/176.jpg"
+  },
+  {
+    "id": "177",
+    "name": "Mules en cuir",
+    "price": 88,
+    "brand": "Massimo Dutti",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "travail",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "nude",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.massimodutti.com/mules-en-cuir",
+    "image_url": "https://images.shop.com/products/177.jpg"
+  },
+  {
+    "id": "178",
+    "name": "Sandales gladiateur",
+    "price": 65,
+    "brand": "Zara",
+    "category": "chaussures",
+    "style": [
+      "boheme",
+      "casual",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "blanc",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 10,
+    "url": "https://www.zara.com/sandales-gladiateur",
+    "image_url": "https://images.shop.com/products/178.jpg"
+  },
+  {
+    "id": "179",
+    "name": "Mocassins en cuir",
+    "price": 105,
+    "brand": "Massimo Dutti",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/mocassins-en-cuir",
+    "image_url": "https://images.shop.com/products/179.jpg"
+  },
+  {
+    "id": "180",
+    "name": "Slip-ons imprimés",
+    "price": 62,
+    "brand": "Vans",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "or",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.vans.com/slip-ons-imprimes",
+    "image_url": "https://images.shop.com/products/180.jpg"
+  },
+  {
+    "id": "181",
+    "name": "Chaussures de danse",
+    "price": 78,
+    "brand": "Mango",
+    "category": "chaussures",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.mango.com/chaussures-de-danse",
+    "image_url": "https://images.shop.com/products/181.jpg"
+  },
+  {
+    "id": "182",
+    "name": "Ballerines en cuir",
+    "price": 72,
+    "brand": "Zara",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "casual",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "blanc",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.zara.com/ballerines-en-cuir",
+    "image_url": "https://images.shop.com/products/182.jpg"
+  },
+  {
+    "id": "183",
+    "name": "Sneakers colorées",
+    "price": 88,
+    "brand": "Adidas",
+    "category": "chaussures",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "noir",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 20,
+    "url": "https://www.adidas.com/sneakers-colorees",
+    "image_url": "https://images.shop.com/products/183.jpg"
+  },
+  {
+    "id": "184",
+    "name": "Sandales compensées",
+    "price": 68,
+    "brand": "Stradivarius",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "or",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.stradivarius.com/sandales-compensees",
+    "image_url": "https://images.shop.com/products/184.jpg"
+  },
+  {
+    "id": "185",
+    "name": "Bottes en cuir hautes",
+    "price": 175,
+    "brand": "Massimo Dutti",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "noir",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/bottes-en-cuir-hautes",
+    "image_url": "https://images.shop.com/products/185.jpg"
+  },
+  {
+    "id": "186",
+    "name": "Tongs de plage",
+    "price": 25,
+    "brand": "H&M",
+    "category": "chaussures",
+    "style": [
+      "plage",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "noir",
+      "nude"
+    ],
+    "stock": false,
+    "rating": 3.9,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.hm.com/tongs-de-plage",
+    "image_url": "https://images.shop.com/products/186.jpg"
+  },
+  {
+    "id": "187",
+    "name": "Chaussures à talons bloc",
+    "price": 92,
+    "brand": "Mango",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "or",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.mango.com/chaussures-a-talons-bloc",
+    "image_url": "https://images.shop.com/products/187.jpg"
+  },
+  {
+    "id": "188",
+    "name": "Espadrilles à plateforme",
+    "price": 58,
+    "brand": "Stradivarius",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "or",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.stradivarius.com/espadrilles-a-plateforme",
+    "image_url": "https://images.shop.com/products/188.jpg"
+  },
+  {
+    "id": "189",
+    "name": "Boots à lacets",
+    "price": 115,
+    "brand": "Zara",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 10,
+    "url": "https://www.zara.com/boots-a-lacets",
+    "image_url": "https://images.shop.com/products/189.jpg"
+  },
+  {
+    "id": "190",
+    "name": "Mules à talons",
+    "price": 82,
+    "brand": "H&M",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "or",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.hm.com/mules-a-talons",
+    "image_url": "https://images.shop.com/products/190.jpg"
+  },
+  {
+    "id": "191",
+    "name": "Running légères",
+    "price": 128,
+    "brand": "New Balance",
+    "category": "chaussures",
+    "style": [
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "or",
+      "marron"
+    ],
+    "stock": false,
+    "rating": 4.2,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.newbalance.com/running-legeres",
+    "image_url": "https://images.shop.com/products/191.jpg"
+  },
+  {
+    "id": "192",
+    "name": "Chaussures de sport montantes",
+    "price": 145,
+    "brand": "Nike",
+    "category": "chaussures",
+    "style": [
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "nude",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.nike.com/chaussures-de-sport-montantes",
+    "image_url": "https://images.shop.com/products/192.jpg"
+  },
+  {
+    "id": "193",
+    "name": "Sandales à strass",
+    "price": 78,
+    "brand": "Mango",
+    "category": "chaussures",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "nude",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.mango.com/sandales-a-strass",
+    "image_url": "https://images.shop.com/products/193.jpg"
+  },
+  {
+    "id": "194",
+    "name": "Loafers dorés",
+    "price": 95,
+    "brand": "Massimo Dutti",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "marron",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/loafers-dores",
+    "image_url": "https://images.shop.com/products/194.jpg"
+  },
+  {
+    "id": "195",
+    "name": "Bottines élastiquées",
+    "price": 108,
+    "brand": "Zara",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "nude",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.zara.com/bottines-elastiquees",
+    "image_url": "https://images.shop.com/products/195.jpg"
+  },
+  {
+    "id": "196",
+    "name": "Tongs en cuir",
+    "price": 48,
+    "brand": "Mango",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "or",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.mango.com/tongs-en-cuir",
+    "image_url": "https://images.shop.com/products/196.jpg"
+  },
+  {
+    "id": "197",
+    "name": "Sneakers blanches",
+    "price": 105,
+    "brand": "Nike",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "marron",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.nike.com/sneakers-blanches",
+    "image_url": "https://images.shop.com/products/197.jpg"
+  },
+  {
+    "id": "198",
+    "name": "Oxford en cuir marron",
+    "price": 165,
+    "brand": "Massimo Dutti",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "travail",
+      "soiree",
+      "mariage"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": false,
+    "rating": 4.6,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 20,
+    "url": "https://www.massimodutti.com/oxford-en-cuir-marron",
+    "image_url": "https://images.shop.com/products/198.jpg"
+  },
+  {
+    "id": "199",
+    "name": "Derby en cuir noir",
+    "price": 145,
+    "brand": "Massimo Dutti",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "or",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.massimodutti.com/derby-en-cuir-noir",
+    "image_url": "https://images.shop.com/products/199.jpg"
+  },
+  {
+    "id": "200",
+    "name": "Mocassins en daim",
+    "price": 118,
+    "brand": "Zara Man",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "blanc",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 20,
+    "url": "https://www.zara.com/mocassins-en-daim",
+    "image_url": "https://images.shop.com/products/200.jpg"
+  },
+  {
+    "id": "201",
+    "name": "Running légères",
+    "price": 138,
+    "brand": "Adidas",
+    "category": "chaussures",
+    "style": [
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "nude",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 10,
+    "url": "https://www.adidas.com/running-legeres",
+    "image_url": "https://images.shop.com/products/201.jpg"
+  },
+  {
+    "id": "202",
+    "name": "Chukka boots",
+    "price": 125,
+    "brand": "Selected",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "nude",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.selectedhomme.com/chukka-boots",
+    "image_url": "https://images.shop.com/products/202.jpg"
+  },
+  {
+    "id": "203",
+    "name": "Sneakers running",
+    "price": 98,
+    "brand": "New Balance",
+    "category": "chaussures",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.newbalance.com/sneakers-running",
+    "image_url": "https://images.shop.com/products/203.jpg"
+  },
+  {
+    "id": "204",
+    "name": "Bottines en cuir",
+    "price": 148,
+    "brand": "Massimo Dutti",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.massimodutti.com/bottines-en-cuir",
+    "image_url": "https://images.shop.com/products/204.jpg"
+  },
+  {
+    "id": "205",
+    "name": "Loafers casual",
+    "price": 88,
+    "brand": "Jack & Jones",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "or"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 10,
+    "url": "https://www.jackjones.com/loafers-casual",
+    "image_url": "https://images.shop.com/products/205.jpg"
+  },
+  {
+    "id": "206",
+    "name": "Espadrilles",
+    "price": 52,
+    "brand": "Pull&Bear",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "blanc",
+      "or"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.pullandbear.com/espadrilles",
+    "image_url": "https://images.shop.com/products/206.jpg"
+  },
+  {
+    "id": "207",
+    "name": "Boots de moto",
+    "price": 175,
+    "brand": "Zara Man",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.zara.com/boots-de-moto",
+    "image_url": "https://images.shop.com/products/207.jpg"
+  },
+  {
+    "id": "208",
+    "name": "Sandales de plage",
+    "price": 35,
+    "brand": "H&M Man",
+    "category": "chaussures",
+    "style": [
+      "plage",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "marron",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.hm.com/sandales-de-plage",
+    "image_url": "https://images.shop.com/products/208.jpg"
+  },
+  {
+    "id": "209",
+    "name": "Sneakers en cuir",
+    "price": 115,
+    "brand": "Zara Man",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "blanc",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.zara.com/sneakers-en-cuir",
+    "image_url": "https://images.shop.com/products/209.jpg"
+  },
+  {
+    "id": "210",
+    "name": "Chaussures de sport",
+    "price": 88,
+    "brand": "Puma",
+    "category": "chaussures",
+    "style": [
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "or",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.puma.com/chaussures-de-sport",
+    "image_url": "https://images.shop.com/products/210.jpg"
+  },
+  {
+    "id": "211",
+    "name": "Slip-ons en canvas",
+    "price": 62,
+    "brand": "Vans",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "marron",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 20,
+    "url": "https://www.vans.com/slip-ons-en-canvas",
+    "image_url": "https://images.shop.com/products/211.jpg"
+  },
+  {
+    "id": "212",
+    "name": "Richelieu élégant",
+    "price": 155,
+    "brand": "Massimo Dutti",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "travail",
+      "mariage"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "blanc",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.8,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/richelieu-elegant",
+    "image_url": "https://images.shop.com/products/212.jpg"
+  },
+  {
+    "id": "213",
+    "name": "Tennis en toile",
+    "price": 48,
+    "brand": "Converse",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "nude",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 20,
+    "url": "https://www.converse.com/tennis-en-toile",
+    "image_url": "https://images.shop.com/products/213.jpg"
+  },
+  {
+    "id": "214",
+    "name": "Tongs sport",
+    "price": 28,
+    "brand": "Nike",
+    "category": "chaussures",
+    "style": [
+      "sport",
+      "plage"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "nude",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.nike.com/tongs-sport",
+    "image_url": "https://images.shop.com/products/214.jpg"
+  },
+  {
+    "id": "215",
+    "name": "Boots chelsea",
+    "price": 132,
+    "brand": "Jack & Jones",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "nude",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 20,
+    "url": "https://www.jackjones.com/boots-chelsea",
+    "image_url": "https://images.shop.com/products/215.jpg"
+  },
+  {
+    "id": "216",
+    "name": "Sneakers montantes",
+    "price": 108,
+    "brand": "Adidas",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "or",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.adidas.com/sneakers-montantes",
+    "image_url": "https://images.shop.com/products/216.jpg"
+  },
+  {
+    "id": "217",
+    "name": "Chaussures de ville",
+    "price": 135,
+    "brand": "Selected",
+    "category": "chaussures",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.selectedhomme.com/chaussures-de-ville",
+    "image_url": "https://images.shop.com/products/217.jpg"
+  },
+  {
+    "id": "218",
+    "name": "Mules en cuir",
+    "price": 72,
+    "brand": "Zara Man",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 10,
+    "url": "https://www.zara.com/mules-en-cuir",
+    "image_url": "https://images.shop.com/products/218.jpg"
+  },
+  {
+    "id": "219",
+    "name": "Bottes de randonnée",
+    "price": 185,
+    "brand": "Columbia",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "nude",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.columbia.com/bottes-de-randonnee",
+    "image_url": "https://images.shop.com/products/219.jpg"
+  },
+  {
+    "id": "220",
+    "name": "Babouches en cuir",
+    "price": 68,
+    "brand": "artisan",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.8,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.artisanat-tunisien.tn/babouches-en-cuir",
+    "image_url": "https://images.shop.com/products/220.jpg"
+  },
+  {
+    "id": "221",
+    "name": "Plateformes",
+    "price": 78,
+    "brand": "Pull&Bear",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.pullandbear.com/plateformes",
+    "image_url": "https://images.shop.com/products/221.jpg"
+  },
+  {
+    "id": "222",
+    "name": "Converse All Star",
+    "price": 75,
+    "brand": "Converse",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "or",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.converse.com/converse-all-star",
+    "image_url": "https://images.shop.com/products/222.jpg"
+  },
+  {
+    "id": "223",
+    "name": "Vans Old Skool",
+    "price": 85,
+    "brand": "Vans",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.vans.com/vans-old-skool",
+    "image_url": "https://images.shop.com/products/223.jpg"
+  },
+  {
+    "id": "224",
+    "name": "Crocs plateformes",
+    "price": 55,
+    "brand": "Crocs",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.crocs.com/crocs-plateformes",
+    "image_url": "https://images.shop.com/products/224.jpg"
+  },
+  {
+    "id": "225",
+    "name": "Nike Air Force 1",
+    "price": 115,
+    "brand": "Nike",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.5,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.nike.com/nike-air-force-1",
+    "image_url": "https://images.shop.com/products/225.jpg"
+  },
+  {
+    "id": "226",
+    "name": "Adidas Stan Smith",
+    "price": 98,
+    "brand": "Adidas",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.adidas.com/adidas-stan-smith",
+    "image_url": "https://images.shop.com/products/226.jpg"
+  },
+  {
+    "id": "227",
+    "name": "New Balance 574",
+    "price": 125,
+    "brand": "New Balance",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "blanc",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 15,
+    "url": "https://www.newbalance.com/new-balance-574",
+    "image_url": "https://images.shop.com/products/227.jpg"
+  },
+  {
+    "id": "228",
+    "name": "Timberland boots",
+    "price": 165,
+    "brand": "Timberland",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "nude",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.timberland.com/timberland-boots",
+    "image_url": "https://images.shop.com/products/228.jpg"
+  },
+  {
+    "id": "229",
+    "name": "Birkenstock Arizona",
+    "price": 92,
+    "brand": "Birkenstock",
+    "category": "chaussures",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.birkenstock.com/birkenstock-arizona",
+    "image_url": "https://images.shop.com/products/229.jpg"
+  },
+  {
+    "id": "230",
+    "name": "Asics Gel",
+    "price": 118,
+    "brand": "Asics",
+    "category": "chaussures",
+    "style": [
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "or",
+      "nude"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 25,
+    "url": "https://www.asics.com/asics-gel",
+    "image_url": "https://images.shop.com/products/230.jpg"
+  },
+  {
+    "id": "231",
+    "name": "Jordan 1",
+    "price": 185,
+    "brand": "Nike",
+    "category": "chaussures",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "nude"
+    ],
+    "stock": false,
+    "rating": 4.6,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 10,
+    "url": "https://www.nike.com/jordan-1",
+    "image_url": "https://images.shop.com/products/231.jpg"
+  },
+  {
+    "id": "232",
+    "name": "Sac à main cuir beige",
+    "price": 150,
+    "brand": "Zara",
+    "category": "sac",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "marron",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 10,
+    "url": "https://www.zara.com/sac-a-main-cuir-beige",
+    "image_url": "https://images.shop.com/products/232.jpg"
+  },
+  {
+    "id": "233",
+    "name": "Sac clutch doré soirée",
+    "price": 65,
+    "brand": "H&M",
+    "category": "sac",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "rouge"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.hm.com/sac-clutch-dore-soiree",
+    "image_url": "https://images.shop.com/products/233.jpg"
+  },
+  {
+    "id": "234",
+    "name": "Tote bag toile canvas",
+    "price": 35,
+    "brand": "Uniqlo",
+    "category": "sac",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.uniqlo.com/tote-bag-toile-canvas",
+    "image_url": "https://images.shop.com/products/234.jpg"
+  },
+  {
+    "id": "235",
+    "name": "Mini sac chaîne noir",
+    "price": 89,
+    "brand": "Mango",
+    "category": "sac",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 10,
+    "url": "https://www.mango.com/mini-sac-chaîne-noir",
+    "image_url": "https://images.shop.com/products/235.jpg"
+  },
+  {
+    "id": "236",
+    "name": "Sac cabas en cuir",
+    "price": 175,
+    "brand": "Massimo Dutti",
+    "category": "sac",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "beige",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 10,
+    "url": "https://www.massimodutti.com/sac-cabas-en-cuir",
+    "image_url": "https://images.shop.com/products/236.jpg"
+  },
+  {
+    "id": "237",
+    "name": "Sac banane tendance",
+    "price": 55,
+    "brand": "Zara",
+    "category": "sac",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "beige",
+      "rouge"
+    ],
+    "stock": false,
+    "rating": 4.0,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 10,
+    "url": "https://www.zara.com/sac-banane-tendance",
+    "image_url": "https://images.shop.com/products/237.jpg"
+  },
+  {
+    "id": "238",
+    "name": "Sac hobo en suède",
+    "price": 125,
+    "brand": "Mango",
+    "category": "sac",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "marron",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 4.2,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 10,
+    "url": "https://www.mango.com/sac-hobo-en-suede",
+    "image_url": "https://images.shop.com/products/238.jpg"
+  },
+  {
+    "id": "239",
+    "name": "Sac à dos cuir",
+    "price": 145,
+    "brand": "Massimo Dutti",
+    "category": "sac",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/sac-a-dos-cuir",
+    "image_url": "https://images.shop.com/products/239.jpg"
+  },
+  {
+    "id": "240",
+    "name": "Pochette en cuir",
+    "price": 85,
+    "brand": "Zara",
+    "category": "sac",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.zara.com/pochette-en-cuir",
+    "image_url": "https://images.shop.com/products/240.jpg"
+  },
+  {
+    "id": "241",
+    "name": "Sac tressé paille",
+    "price": 45,
+    "brand": "Stradivarius",
+    "category": "sac",
+    "style": [
+      "boheme",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "beige",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.stradivarius.com/sac-tresse-paille",
+    "image_url": "https://images.shop.com/products/241.jpg"
+  },
+  {
+    "id": "242",
+    "name": "Micro bag tendance",
+    "price": 78,
+    "brand": "Mango",
+    "category": "sac",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.mango.com/micro-bag-tendance",
+    "image_url": "https://images.shop.com/products/242.jpg"
+  },
+  {
+    "id": "243",
+    "name": "Sac à dos sport",
+    "price": 62,
+    "brand": "Nike",
+    "category": "sac",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 20,
+    "url": "https://www.nike.com/sac-a-dos-sport",
+    "image_url": "https://images.shop.com/products/243.jpg"
+  },
+  {
+    "id": "244",
+    "name": "Sac baguette",
+    "price": 92,
+    "brand": "Zara",
+    "category": "sac",
+    "style": [
+      "chic",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "marron"
+    ],
+    "stock": false,
+    "rating": 4.2,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.zara.com/sac-baguette",
+    "image_url": "https://images.shop.com/products/244.jpg"
+  },
+  {
+    "id": "245",
+    "name": "Sac en velours",
+    "price": 88,
+    "brand": "Mango",
+    "category": "sac",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.mango.com/sac-en-velours",
+    "image_url": "https://images.shop.com/products/245.jpg"
+  },
+  {
+    "id": "246",
+    "name": "Sac reporter en cuir",
+    "price": 135,
+    "brand": "Massimo Dutti",
+    "category": "sac",
+    "style": [
+      "travail",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "beige",
+      "rouge"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 10,
+    "url": "https://www.massimodutti.com/sac-reporter-en-cuir",
+    "image_url": "https://images.shop.com/products/246.jpg"
+  },
+  {
+    "id": "247",
+    "name": "Bucket bag",
+    "price": 72,
+    "brand": "H&M",
+    "category": "sac",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "marron",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.hm.com/bucket-bag",
+    "image_url": "https://images.shop.com/products/247.jpg"
+  },
+  {
+    "id": "248",
+    "name": "Sac en raphia",
+    "price": 48,
+    "brand": "Stradivarius",
+    "category": "sac",
+    "style": [
+      "boheme",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "beige",
+      "or"
+    ],
+    "stock": false,
+    "rating": 3.7,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.stradivarius.com/sac-en-raphia",
+    "image_url": "https://images.shop.com/products/248.jpg"
+  },
+  {
+    "id": "249",
+    "name": "Sac bowling",
+    "price": 118,
+    "brand": "Mango",
+    "category": "sac",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 10,
+    "url": "https://www.mango.com/sac-bowling",
+    "image_url": "https://images.shop.com/products/249.jpg"
+  },
+  {
+    "id": "250",
+    "name": "Sacoche compacte",
+    "price": 68,
+    "brand": "Zara",
+    "category": "sac",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.zara.com/sacoche-compacte",
+    "image_url": "https://images.shop.com/products/250.jpg"
+  },
+  {
+    "id": "251",
+    "name": "Panier osier",
+    "price": 38,
+    "brand": "H&M",
+    "category": "sac",
+    "style": [
+      "boheme",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 25,
+    "url": "https://www.hm.com/panier-osier",
+    "image_url": "https://images.shop.com/products/251.jpg"
+  },
+  {
+    "id": "252",
+    "name": "Sac bandoulière sport",
+    "price": 49,
+    "brand": "Nike",
+    "category": "sac",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "beige",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 25,
+    "url": "https://www.nike.com/sac-bandouliere-sport",
+    "image_url": "https://images.shop.com/products/252.jpg"
+  },
+  {
+    "id": "253",
+    "name": "Sac à dos laptop",
+    "price": 95,
+    "brand": "Massimo Dutti",
+    "category": "sac",
+    "style": [
+      "travail",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "rouge"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/sac-a-dos-laptop",
+    "image_url": "https://images.shop.com/products/253.jpg"
+  },
+  {
+    "id": "254",
+    "name": "Sacoche en cuir",
+    "price": 115,
+    "brand": "Massimo Dutti",
+    "category": "sac",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "marron",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/sacoche-en-cuir",
+    "image_url": "https://images.shop.com/products/254.jpg"
+  },
+  {
+    "id": "255",
+    "name": "Backpack casual",
+    "price": 72,
+    "brand": "Jack & Jones",
+    "category": "sac",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "marron",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 20,
+    "url": "https://www.jackjones.com/backpack-casual",
+    "image_url": "https://images.shop.com/products/255.jpg"
+  },
+  {
+    "id": "256",
+    "name": "Sac de gym",
+    "price": 55,
+    "brand": "Adidas",
+    "category": "sac",
+    "style": [
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "marron",
+      "rouge"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 25,
+    "url": "https://www.adidas.com/sac-de-gym",
+    "image_url": "https://images.shop.com/products/256.jpg"
+  },
+  {
+    "id": "257",
+    "name": "Tote bag",
+    "price": 42,
+    "brand": "H&M Man",
+    "category": "sac",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 3.6,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.hm.com/tote-bag",
+    "image_url": "https://images.shop.com/products/257.jpg"
+  },
+  {
+    "id": "258",
+    "name": "Sac messenger",
+    "price": 88,
+    "brand": "Selected",
+    "category": "sac",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 10,
+    "url": "https://www.selectedhomme.com/sac-messenger",
+    "image_url": "https://images.shop.com/products/258.jpg"
+  },
+  {
+    "id": "259",
+    "name": "Sac à dos sport",
+    "price": 65,
+    "brand": "Nike",
+    "category": "sac",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "marron",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.nike.com/sac-a-dos-sport",
+    "image_url": "https://images.shop.com/products/259.jpg"
+  },
+  {
+    "id": "260",
+    "name": "Sacoche téléphone",
+    "price": 45,
+    "brand": "Zara Man",
+    "category": "sac",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.zara.com/sacoche-telephone",
+    "image_url": "https://images.shop.com/products/260.jpg"
+  },
+  {
+    "id": "261",
+    "name": "Sac voyage",
+    "price": 145,
+    "brand": "Massimo Dutti",
+    "category": "sac",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 4.4,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.massimodutti.com/sac-voyage",
+    "image_url": "https://images.shop.com/products/261.jpg"
+  },
+  {
+    "id": "262",
+    "name": "Sac à dos classique",
+    "price": 58,
+    "brand": "H&M",
+    "category": "sac",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 25,
+    "url": "https://www.hm.com/sac-a-dos-classique",
+    "image_url": "https://images.shop.com/products/262.jpg"
+  },
+  {
+    "id": "263",
+    "name": "Tote bag bio",
+    "price": 28,
+    "brand": "Uniqlo",
+    "category": "sac",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "rouge"
+    ],
+    "stock": true,
+    "rating": 4.2,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.uniqlo.com/tote-bag-bio",
+    "image_url": "https://images.shop.com/products/263.jpg"
+  },
+  {
+    "id": "264",
+    "name": "Sac en filet marché",
+    "price": 22,
+    "brand": "artisan",
+    "category": "sac",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "beige",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 25,
+    "url": "https://www.artisanat-tunisien.tn/sac-en-filet-marche",
+    "image_url": "https://images.shop.com/products/264.jpg"
+  },
+  {
+    "id": "265",
+    "name": "Backpack imperméable",
+    "price": 82,
+    "brand": "Decathlon",
+    "category": "sac",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 25,
+    "url": "https://www.decathlon.com/backpack-impermeable",
+    "image_url": "https://images.shop.com/products/265.jpg"
+  },
+  {
+    "id": "266",
+    "name": "Sac de plage",
+    "price": 32,
+    "brand": "H&M",
+    "category": "sac",
+    "style": [
+      "plage",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "marron"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.hm.com/sac-de-plage",
+    "image_url": "https://images.shop.com/products/266.jpg"
+  },
+  {
+    "id": "267",
+    "name": "Fanny pack",
+    "price": 38,
+    "brand": "Nike",
+    "category": "sac",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 4.5,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.nike.com/fanny-pack",
+    "image_url": "https://images.shop.com/products/267.jpg"
+  },
+  {
+    "id": "268",
+    "name": "Sac shopping pliable",
+    "price": 18,
+    "brand": "Uniqlo",
+    "category": "sac",
+    "style": [
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "or"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 15,
+    "url": "https://www.uniqlo.com/sac-shopping-pliable",
+    "image_url": "https://images.shop.com/products/268.jpg"
+  },
+  {
+    "id": "269",
+    "name": "Sac à dos laptop slim",
+    "price": 105,
+    "brand": "Massimo Dutti",
+    "category": "sac",
+    "style": [
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/sac-a-dos-laptop-slim",
+    "image_url": "https://images.shop.com/products/269.jpg"
+  },
+  {
+    "id": "270",
+    "name": "Sac à dos vintage",
+    "price": 65,
+    "brand": "Pull&Bear",
+    "category": "sac",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "beige"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 25,
+    "url": "https://www.pullandbear.com/sac-a-dos-vintage",
+    "image_url": "https://images.shop.com/products/270.jpg"
+  },
+  {
+    "id": "271",
+    "name": "Sac de voyage",
+    "price": 92,
+    "brand": "Zara",
+    "category": "sac",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "rouge",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.zara.com/sac-de-voyage",
+    "image_url": "https://images.shop.com/products/271.jpg"
+  },
+  {
+    "id": "272",
+    "name": "Ceinture en cuir",
+    "price": 45,
+    "brand": "Zara",
+    "category": "accessoire",
+    "style": [
+      "chic",
+      "casual",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "or"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.zara.com/ceinture-en-cuir",
+    "image_url": "https://images.shop.com/products/272.jpg"
+  },
+  {
+    "id": "273",
+    "name": "Lunettes de soleil cat-eye",
+    "price": 65,
+    "brand": "Mango",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.mango.com/lunettes-de-soleil-cat-eye",
+    "image_url": "https://images.shop.com/products/273.jpg"
+  },
+  {
+    "id": "274",
+    "name": "Foulard en soie",
+    "price": 85,
+    "brand": "Massimo Dutti",
+    "category": "accessoire",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "argent",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/foulard-en-soie",
+    "image_url": "https://images.shop.com/products/274.jpg"
+  },
+  {
+    "id": "275",
+    "name": "Chapeau capeline paille",
+    "price": 38,
+    "brand": "H&M",
+    "category": "accessoire",
+    "style": [
+      "boheme",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 25,
+    "url": "https://www.hm.com/chapeau-capeline-paille",
+    "image_url": "https://images.shop.com/products/275.jpg"
+  },
+  {
+    "id": "276",
+    "name": "Collier doré long",
+    "price": 42,
+    "brand": "Stradivarius",
+    "category": "accessoire",
+    "style": [
+      "soiree",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.stradivarius.com/collier-dore-long",
+    "image_url": "https://images.shop.com/products/276.jpg"
+  },
+  {
+    "id": "277",
+    "name": "Boucles d'oreilles créoles",
+    "price": 35,
+    "brand": "H&M",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "multicolore",
+      "noir"
+    ],
+    "stock": false,
+    "rating": 3.8,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 25,
+    "url": "https://www.hm.com/boucles-doreilles-creoles",
+    "image_url": "https://images.shop.com/products/277.jpg"
+  },
+  {
+    "id": "278",
+    "name": "Bracelet manchette",
+    "price": 55,
+    "brand": "Mango",
+    "category": "accessoire",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "multicolore",
+      "or"
+    ],
+    "stock": false,
+    "rating": 4.0,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.mango.com/bracelet-manchette",
+    "image_url": "https://images.shop.com/products/278.jpg"
+  },
+  {
+    "id": "279",
+    "name": "Ceinture chaîne",
+    "price": 48,
+    "brand": "Zara",
+    "category": "accessoire",
+    "style": [
+      "chic",
+      "soiree"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "blanc",
+      "multicolore"
+    ],
+    "stock": false,
+    "rating": 4.1,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 25,
+    "url": "https://www.zara.com/ceinture-chaîne",
+    "image_url": "https://images.shop.com/products/279.jpg"
+  },
+  {
+    "id": "280",
+    "name": "Chapeau bob coton",
+    "price": 28,
+    "brand": "H&M",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "plage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "multicolore"
+    ],
+    "stock": false,
+    "rating": 3.8,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 25,
+    "url": "https://www.hm.com/chapeau-bob-coton",
+    "image_url": "https://images.shop.com/products/280.jpg"
+  },
+  {
+    "id": "281",
+    "name": "Collier de perles",
+    "price": 125,
+    "brand": "Massimo Dutti",
+    "category": "accessoire",
+    "style": [
+      "chic",
+      "mariage"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "argent"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 20,
+    "url": "https://www.massimodutti.com/collier-de-perles",
+    "image_url": "https://images.shop.com/products/281.jpg"
+  },
+  {
+    "id": "282",
+    "name": "Ceinture en cuir",
+    "price": 52,
+    "brand": "Massimo Dutti",
+    "category": "accessoire",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 4.6,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 10,
+    "url": "https://www.massimodutti.com/ceinture-en-cuir",
+    "image_url": "https://images.shop.com/products/282.jpg"
+  },
+  {
+    "id": "283",
+    "name": "Montre classique",
+    "price": 195,
+    "brand": "Massimo Dutti",
+    "category": "accessoire",
+    "style": [
+      "chic",
+      "travail",
+      "soiree"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "argent"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/montre-classique",
+    "image_url": "https://images.shop.com/products/283.jpg"
+  },
+  {
+    "id": "284",
+    "name": "Lunettes de soleil aviateur",
+    "price": 72,
+    "brand": "Zara Man",
+    "category": "accessoire",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 25,
+    "url": "https://www.zara.com/lunettes-de-soleil-aviateur",
+    "image_url": "https://images.shop.com/products/284.jpg"
+  },
+  {
+    "id": "285",
+    "name": "Casquette",
+    "price": 32,
+    "brand": "Nike",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "argent",
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 4.4,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.nike.com/casquette",
+    "image_url": "https://images.shop.com/products/285.jpg"
+  },
+  {
+    "id": "286",
+    "name": "Chapeau fedora",
+    "price": 58,
+    "brand": "Jack & Jones",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 3.7,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 25,
+    "url": "https://www.jackjones.com/chapeau-fedora",
+    "image_url": "https://images.shop.com/products/286.jpg"
+  },
+  {
+    "id": "287",
+    "name": "Écharpe en laine",
+    "price": 45,
+    "brand": "Uniqlo",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "or",
+      "multicolore"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.uniqlo.com/echarpe-en-laine",
+    "image_url": "https://images.shop.com/products/287.jpg"
+  },
+  {
+    "id": "288",
+    "name": "Bonnet en cachemire",
+    "price": 38,
+    "brand": "Uniqlo",
+    "category": "accessoire",
+    "style": [
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "argent",
+      "or"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 10,
+    "url": "https://www.uniqlo.com/bonnet-en-cachemire",
+    "image_url": "https://images.shop.com/products/288.jpg"
+  },
+  {
+    "id": "289",
+    "name": "Lunettes de soleil rétro",
+    "price": 55,
+    "brand": "Pull&Bear",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "blanc",
+      "or"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.pullandbear.com/lunettes-de-soleil-retro",
+    "image_url": "https://images.shop.com/products/289.jpg"
+  },
+  {
+    "id": "290",
+    "name": "Ceinture tressée",
+    "price": 35,
+    "brand": "H&M",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "multicolore",
+      "blanc"
+    ],
+    "stock": false,
+    "rating": 3.8,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 10,
+    "url": "https://www.hm.com/ceinture-tressee",
+    "image_url": "https://images.shop.com/products/290.jpg"
+  },
+  {
+    "id": "291",
+    "name": "Bracelets tissés",
+    "price": 22,
+    "brand": "artisan",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "multicolore",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.8,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.artisanat-tunisien.tn/bracelets-tisses",
+    "image_url": "https://images.shop.com/products/291.jpg"
+  },
+  {
+    "id": "292",
+    "name": "Robe portefeuille viscose",
+    "price": 74,
+    "brand": "Zara",
+    "category": "robe",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "rose",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 20,
+    "url": "https://www.zara.com/robe-portefeuille-viscose",
+    "image_url": "https://images.shop.com/products/292.jpg"
+  },
+  {
+    "id": "293",
+    "name": "Robe en voile romantique",
+    "price": 96,
+    "brand": "Stradivarius",
+    "category": "robe",
+    "style": [
+      "boheme",
+      "casual"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blanc",
+      "parme"
+    ],
+    "stock": true,
+    "rating": 3.8,
+    "description": "Robe élégante et tendance pour toutes les occasions.",
+    "discount": 20,
+    "url": "https://www.stradivarius.com/robe-en-voile-romantique",
+    "image_url": "https://images.shop.com/products/293.jpg"
+  },
+  {
+    "id": "294",
+    "name": "Chemise popeline rayée",
+    "price": 72,
+    "brand": "Zara Man",
+    "category": "haut",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "bleu",
+      "blanc"
+    ],
+    "stock": true,
+    "rating": 3.9,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.zara.com/chemise-popeline-rayee",
+    "image_url": "https://images.shop.com/products/294.jpg"
+  },
+  {
+    "id": "295",
+    "name": "Pull-over col bateau",
+    "price": 82,
+    "brand": "Uniqlo",
+    "category": "haut",
+    "style": [
+      "casual",
+      "chic"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "marine",
+      "gris",
+      "camel"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Pièce incontournable pour un look soigné au quotidien.",
+    "discount": 10,
+    "url": "https://www.uniqlo.com/pull-over-col-bateau",
+    "image_url": "https://images.shop.com/products/295.jpg"
+  },
+  {
+    "id": "296",
+    "name": "Pantalon droit en coton",
+    "price": 88,
+    "brand": "Massimo Dutti",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "travail"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "beige",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.7,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.massimodutti.com/pantalon-droit-en-coton",
+    "image_url": "https://images.shop.com/products/296.jpg"
+  },
+  {
+    "id": "297",
+    "name": "Jupe midi en lin",
+    "price": 65,
+    "brand": "H&M",
+    "category": "pantalon",
+    "style": [
+      "casual",
+      "boheme"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "naturel",
+      "blanc",
+      "rose"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Coupe flatteuse et tissu de qualité pour un confort optimal.",
+    "discount": 0,
+    "url": "https://www.hm.com/jupe-midi-en-lin",
+    "image_url": "https://images.shop.com/products/297.jpg"
+  },
+  {
+    "id": "298",
+    "name": "Sneakers en mesh",
+    "price": 88,
+    "brand": "Puma",
+    "category": "chaussures",
+    "style": [
+      "sport",
+      "casual"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "noir",
+      "blanc",
+      "gris"
+    ],
+    "stock": true,
+    "rating": 4.0,
+    "description": "Confort et style réunis dans une paire facile à porter.",
+    "discount": 0,
+    "url": "https://www.puma.com/sneakers-en-mesh",
+    "image_url": "https://images.shop.com/products/298.jpg"
+  },
+  {
+    "id": "299",
+    "name": "Sac à main trapèze",
+    "price": 102,
+    "brand": "Mango",
+    "category": "sac",
+    "style": [
+      "chic",
+      "travail"
+    ],
+    "gender": "femme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "cognac",
+      "noir"
+    ],
+    "stock": true,
+    "rating": 4.3,
+    "description": "Accessoire indispensable, alliant praticité et esthétique.",
+    "discount": 0,
+    "url": "https://www.mango.com/sac-a-main-trapeze",
+    "image_url": "https://images.shop.com/products/299.jpg"
+  },
+  {
+    "id": "300",
+    "name": "Montre connectée",
+    "price": 245,
+    "brand": "Samsung",
+    "category": "accessoire",
+    "style": [
+      "casual",
+      "sport"
+    ],
+    "gender": "homme",
+    "sizes": [
+      "unique"
+    ],
+    "colors": [
+      "noir",
+      "argent"
+    ],
+    "stock": true,
+    "rating": 4.1,
+    "description": "Détail qui fait toute la différence dans une tenue.",
+    "discount": 0,
+    "url": "https://www.shop.com/montre-connectee",
+    "image_url": "https://images.shop.com/products/300.jpg"
+  }
+]
