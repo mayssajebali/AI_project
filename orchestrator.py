@@ -1,61 +1,291 @@
+# -*- coding: utf-8 -*-
 # ============================================================
-#  orchestrator.py — Personne 1 : L'Orchestrateur
-#  Agent IA de Shopping Intelligent
+# orchestrator.py — Personne 1 : L'Orchestrateur
+# WearWise AI — Smart Closet & Anti-Regret Shopping Agent
 #
-#  Rôle de ce fichier :
-#  - Recevoir le message utilisateur
-#  - Analyser l'intention
-#  - Planifier les tools à utiliser
-#  - Exécuter les tools
-#  - Construire une réponse claire pour l'interface
+# Rôle de ce fichier :
+# - Recevoir le message utilisateur
+# - Analyser l'intention
+# - Analyser la garde-robe utilisateur
+# - Détecter les pièces manquantes selon l'occasion
+# - Planifier les tools à utiliser
+# - Exécuter les tools
+# - Construire une réponse claire et non encombrée
 # ============================================================
 
 import re
 
 from tools_basic import search_products, compare_prices, get_product_by_id, get_catalogue_stats
-from tools_bonus import fashion_stylist, outfit_builder, negotiate_deal, generate_outfit_options
+from tools_bonus import (
+    fashion_stylist,
+    outfit_builder,
+    negotiate_deal,
+    generate_outfit_options,
+    anti_regret_analyzer
+)
 
 import tools_bonus
 print("TOOLS_BONUS UTILISÉ :", tools_bonus.__file__)
 
 
 # ============================================================
-#  ÉTAPE 1 : ANALYSER L'INTENTION DE L'UTILISATEUR
+# 0. HELPERS D'AFFICHAGE
+# ============================================================
+
+def display_label(value):
+    """
+    Convertit les valeurs internes en labels plus jolis pour l'utilisateur.
+    Exemple : soiree -> soirée
+    """
+
+    labels = {
+        "soiree": "soirée",
+        "soutenance": "soutenance",
+        "entretien": "entretien",
+        "universite": "université",
+        "mariage": "mariage",
+        "travail": "travail",
+        "casual": "casual",
+        "sport": "sport",
+        "plage": "plage",
+        "boheme": "bohème",
+        None: "non précisé"
+    }
+
+    return labels.get(value, value)
+
+
+def format_price(value):
+    """
+    Formate un prix proprement.
+    """
+
+    if value is None:
+        return "N/A"
+
+    if isinstance(value, float) and value.is_integer():
+        return f"{int(value)} DT"
+
+    return f"{value} DT"
+
+
+def normalize_text(message):
+    """
+    Normalise le message utilisateur.
+    """
+
+    if not message:
+        return ""
+
+    return message.lower().strip()
+
+
+def event_for_tools(event):
+    """
+    Certains tools ne connaissent pas encore 'soutenance' ou 'entretien'.
+    On les traite comme 'travail' pour garder une tenue professionnelle.
+    """
+
+    if event in ["soutenance", "entretien"]:
+        return "travail"
+
+    return event
+
+
+# ============================================================
+# 1. WARDROBE TWIN — ANALYSE GARDE-ROBE
+# ============================================================
+
+def parse_closet_items(closet_text=None):
+    """
+    Transforme le texte de la garde-robe en liste propre.
+
+    Exemple :
+    "chemise blanche, pantalon noir, baskets blanches"
+
+    devient :
+    ["chemise blanche", "pantalon noir", "baskets blanches"]
+    """
+
+    if not closet_text:
+        return []
+
+    raw_items = closet_text.replace("\n", ",").split(",")
+    items = []
+
+    for item in raw_items:
+        cleaned = item.strip().lower()
+
+        if cleaned:
+            items.append(cleaned)
+
+    return items
+
+
+def detect_item_category(item):
+    """
+    Détecte la catégorie d'une pièce de garde-robe.
+    """
+
+    item = item.lower()
+
+    if re.search(r"robe", item):
+        return "robe"
+
+    if re.search(r"chaussure|sneaker|sneakers|basket|baskets|escarpin|sandale|mocassin|botte|bottine", item):
+        return "chaussures"
+
+    if re.search(r"\bsac\b|clutch|pochette|tote|backpack", item):
+        return "sac"
+
+    if re.search(r"pantalon|jean|jupe|legging|short|cargo", item):
+        return "pantalon"
+
+    if re.search(r"chemise|t-shirt|tee-shirt|haut|top|blazer|veste|pull|sweat|manteau|cardigan|hoodie", item):
+        return "haut"
+
+    if re.search(r"ceinture|lunette|bijou|collier|bracelet|chapeau|montre|écharpe|echarpe|bonnet|accessoire", item):
+        return "accessoire"
+
+    return "autre"
+
+
+def analyze_closet(closet_items):
+    """
+    Analyse la garde-robe et retourne :
+    - liste des items
+    - catégories détectées
+    - mapping catégorie -> items
+    """
+
+    categories = {}
+    category_list = []
+
+    for item in closet_items:
+        category = detect_item_category(item)
+
+        if category not in categories:
+            categories[category] = []
+
+        categories[category].append(item)
+
+        if category not in category_list:
+            category_list.append(category)
+
+    return {
+        "items": closet_items,
+        "categories": category_list,
+        "by_category": categories
+    }
+
+
+def get_required_categories_for_event(event, gender=None):
+    """
+    Donne les catégories nécessaires selon l'occasion.
+    Cette fonction sert au Gap Analyzer.
+    """
+
+    if event in ["soutenance", "entretien", "travail"]:
+        return ["haut", "pantalon", "chaussures", "sac"]
+
+    if event == "mariage" and gender == "femme":
+        return ["robe", "chaussures", "sac"]
+
+    if event == "soiree" and gender == "femme":
+        return ["robe", "chaussures", "sac"]
+
+    if event == "sport":
+        return ["haut", "pantalon", "chaussures"]
+
+    if event == "plage":
+        return ["haut", "pantalon", "chaussures", "accessoire"]
+
+    return ["haut", "pantalon", "chaussures", "accessoire"]
+
+
+def detect_missing_pieces(event, gender, closet_analysis):
+    """
+    Compare les pièces nécessaires avec la garde-robe existante.
+    """
+
+    required = get_required_categories_for_event(event, gender)
+    owned_categories = closet_analysis.get("categories", [])
+
+    covered = []
+    missing = []
+
+    for category in required:
+        if category in owned_categories:
+            covered.append(category)
+        else:
+            missing.append(category)
+
+    return {
+        "required": required,
+        "covered": covered,
+        "missing": missing
+    }
+
+
+def attach_closet_to_intent(intent, closet_items=None):
+    """
+    Ajoute la garde-robe dans l'intent.
+
+    Correction importante :
+    - Pour une recherche simple, ex : "je cherche sneakers homme 150dt",
+      on ne déclenche PAS Wardrobe Twin / Gap Analyzer.
+    - Pour une tenue complète, ex : "tenue soutenance femme 150dt",
+      on déclenche Wardrobe Twin / Gap Analyzer.
+    """
+
+    parsed_items = parse_closet_items(closet_items)
+
+    intent["closet_items"] = parsed_items
+    intent["closet_analysis"] = None
+    intent["gap_analysis"] = None
+
+    if parsed_items and intent.get("wants_outfit"):
+        closet_analysis = analyze_closet(parsed_items)
+
+        intent["closet_analysis"] = closet_analysis
+        intent["gap_analysis"] = detect_missing_pieces(
+            event=intent.get("event"),
+            gender=intent.get("gender"),
+            closet_analysis=closet_analysis
+        )
+
+    return intent
+
+
+# ============================================================
+# 2. ÉTAPE 1 : ANALYSER L'INTENTION DE L'UTILISATEUR
 # ============================================================
 
 def analyze_intent(message):
     """
     Transforme une phrase utilisateur en informations structurées.
-    Exemple :
-    "je veux une tenue chic femme 150dt"
-    devient :
-    style = chic
-    gender = femme
-    budget = 150
-    wants_outfit = True
     """
 
-    msg = message.lower()
+    msg = normalize_text(message)
 
     return {
         "wants_styling": bool(re.search(
-            r"style|tenue|outfit|look|mariage|casual|chic|élégant|soirée|plage|travail|bureau",
+            r"style|tenue|outfit|look|mariage|casual|chic|élégant|elegant|soirée|soiree|plage|travail|bureau|soutenance|entretien|université|universite",
             msg
         )),
 
         "wants_search": bool(re.search(
-            r"cherche|trouve|veux|besoin|acheter|produit|montre|show",
+            r"cherche|trouve|veux|besoin|acheter|produit|montre|show|recommande|propose",
             msg
         )),
 
         "wants_deal": bool(re.search(
-            r"réduction|promo|moins cher|deal|remise|négoci|offre|solde",
+            r"réduction|reduction|promo|moins cher|deal|remise|négoci|negoci|offre|solde",
             msg
         )),
 
-        # Important : détecte aussi "tenue", "look", "outfit"
         "wants_outfit": bool(re.search(
-            r"tenue complète|outfit complet|look complet|assembl|tenue pour|\btenue\b|\boutfit\b|\blook\b",
+            r"tenue complète|tenue complete|outfit complet|look complet|assembl|tenue pour|\btenue\b|\boutfit\b|\blook\b",
             msg
         )),
 
@@ -67,33 +297,45 @@ def analyze_intent(message):
         "color": extract_color(msg),
         "brand": extract_brand(msg),
         "size": extract_size(msg),
+
+        "closet_items": [],
+        "closet_analysis": None,
+        "gap_analysis": None,
     }
 
 
 def extract_budget(msg):
     """
     Extrait le budget depuis la phrase.
-    Exemple : 150dt → 150
+    Exemple : 150dt -> 150
     """
 
-    match = re.search(r"(\d+)\s*(dt|tnd|dinar|€|eur|\$)?", msg)
+    match = re.search(r"(\d+)\s*(dt|tnd|dinar|dinars|€|eur|\$)?", msg)
     return int(match.group(1)) if match else None
 
 
 def extract_event(msg):
     """
     Détecte l'événement ou l'occasion.
-    Si aucun événement clair n'est trouvé, on utilise casual par défaut.
     """
 
     if re.search(r"mariage|wedding", msg):
         return "mariage"
 
-    if re.search(r"travail|bureau|meeting", msg):
+    if re.search(r"soutenance|présentation|presentation|oral|exposé|expose|projet", msg):
+        return "soutenance"
+
+    if re.search(r"entretien|interview|stage|recrutement", msg):
+        return "entretien"
+
+    if re.search(r"travail|bureau|meeting|réunion|reunion", msg):
         return "travail"
 
-    if re.search(r"soirée|party|fête|gala", msg):
-        return "soirée"
+    if re.search(r"soirée|soiree|party|fête|fete|gala", msg):
+        return "soiree"
+
+    if re.search(r"université|universite|fac|college|cours|école|ecole", msg):
+        return "universite"
 
     if re.search(r"plage|beach|piscine", msg):
         return "plage"
@@ -101,7 +343,7 @@ def extract_event(msg):
     if re.search(r"sport|gym|fitness|running", msg):
         return "sport"
 
-    return None  # pas d'occasion explicite détectée
+    return None
 
 
 def extract_style(msg):
@@ -109,26 +351,32 @@ def extract_style(msg):
     Détecte le style demandé.
     """
 
-    if re.search(r"chic|élégant|classe|luxe", msg):
+    if re.search(
+        r"soutenance|présentation|presentation|oral|exposé|expose|entretien|interview|stage|professionnel|travail|bureau",
+        msg
+    ):
+        return "travail"
+
+    if re.search(r"chic|élégant|elegant|classe|luxe|habillé|habille", msg):
         return "chic"
 
-    if re.search(r"casual|décontract|simple", msg):
+    if re.search(r"casual|décontract|decontract|simple|quotidien", msg):
         return "casual"
 
-    if re.search(r"sport|gym|fitness", msg):
+    if re.search(r"sport|gym|fitness|running", msg):
         return "sport"
 
     if re.search(r"bohème|boho|boheme", msg):
         return "boheme"
 
-    if re.search(r"soirée|fête|gala", msg):
+    if re.search(r"soirée|soiree|fête|fete|gala|party", msg):
         return "soiree"
 
     if re.search(r"mariage|wedding", msg):
         return "mariage"
 
-    if re.search(r"travail|bureau|professionnel", msg):
-        return "travail"
+    if re.search(r"université|universite|fac|college|cours", msg):
+        return "casual"
 
     return None
 
@@ -141,7 +389,7 @@ def extract_category(msg):
     if re.search(r"robe", msg):
         return "robe"
 
-    if re.search(r"chaussure|sneaker|basket|escarpin|bott|sandale|mocassin", msg):
+    if re.search(r"chaussure|chaussures|sneaker|sneakers|basket|baskets|escarpin|bott|sandale|mocassin", msg):
         return "chaussures"
 
     if re.search(r"\bsac\b|bag|clutch|tote|pochette|backpack", msg):
@@ -150,10 +398,10 @@ def extract_category(msg):
     if re.search(r"pantalon|jean|jupe|legging|short|cargo", msg):
         return "pantalon"
 
-    if re.search(r"chemise|t-shirt|haut|top|blazer|veste|pull|sweat|manteau|blouson|cardigan|hoodie", msg):
+    if re.search(r"chemise|t-shirt|tee-shirt|haut|top|blazer|veste|pull|sweat|manteau|blouson|cardigan|hoodie", msg):
         return "haut"
 
-    if re.search(r"accessoire|ceinture|lunette|bijou|collier|bracelet|chapeau|montre|écharpe|bonnet", msg):
+    if re.search(r"accessoire|ceinture|lunette|bijou|collier|bracelet|chapeau|montre|écharpe|echarpe|bonnet", msg):
         return "accessoire"
 
     return None
@@ -164,10 +412,10 @@ def extract_gender(msg):
     Détecte homme / femme.
     """
 
-    if re.search(r"\bhomme\b|masculin|mec|garçon|monsieur", msg):
+    if re.search(r"\bhomme\b|masculin|mec|garçon|garcon|monsieur", msg):
         return "homme"
 
-    if re.search(r"\bfemme\b|féminin|dame|fille|madame", msg):
+    if re.search(r"\bfemme\b|féminin|feminin|dame|fille|madame", msg):
         return "femme"
 
     return None
@@ -176,19 +424,18 @@ def extract_gender(msg):
 def extract_color(msg):
     """
     Détecte la couleur.
-    Correction importante :
-    on utilise \\b pour éviter de détecter 'or' dans 'sport'.
     """
 
     colors = [
         "noir", "blanc", "rouge", "bleu", "vert", "rose", "beige", "gris",
         "marron", "camel", "or", "argent", "nude", "bordeaux", "kaki",
-        "marine", "crème", "corail", "jaune", "violet", "lilas",
+        "marine", "crème", "creme", "corail", "jaune", "violet", "lilas",
         "emeraude", "turquoise", "champagne"
     ]
 
     for color in colors:
         pattern = r"\b" + re.escape(color) + r"\b"
+
         if re.search(pattern, msg):
             return color
 
@@ -224,6 +471,7 @@ def extract_size(msg):
 
     for size in sizes_vetement + sizes_chaussure:
         pattern = r"\b" + re.escape(size) + r"\b"
+
         if re.search(pattern, msg):
             return size.upper() if size in sizes_vetement else size
 
@@ -231,19 +479,16 @@ def extract_size(msg):
 
 
 # ============================================================
-#  ÉTAPE 2 : PLANIFIER LES TOOLS À APPELER
+# 3. ÉTAPE 2 : PLANIFIER LES TOOLS À APPELER
 # ============================================================
 
 def plan_steps(intent):
     """
     Crée le plan d'action de l'agent.
-    C'est ici qu'on montre que l'agent est autonome :
-    il décide quels tools appeler selon la demande.
     """
 
     steps = []
 
-    # Recherche + comparaison dès qu'il y a une demande shopping ou style
     if (
         intent["wants_search"]
         or intent["wants_outfit"]
@@ -258,19 +503,15 @@ def plan_steps(intent):
         steps.append("search_products")
         steps.append("compare_prices")
 
-    # Conseil styliste
     if intent["wants_styling"]:
         steps.append("fashion_stylist")
 
-    # Construction de tenue complète
     if intent["wants_outfit"]:
         steps.append("outfit_builder")
 
-    # Négociation / deals
     if intent["wants_deal"]:
         steps.append("negotiate_deal")
 
-    # Fallback si rien n'est détecté
     if not steps:
         steps.append("search_products")
         steps.append("compare_prices")
@@ -279,22 +520,20 @@ def plan_steps(intent):
 
 
 # ============================================================
-#  ÉTAPE 3 : EXÉCUTER LES TOOLS
+# 4. ÉTAPE 3 : EXÉCUTER LES TOOLS
 # ============================================================
 
 def execute_steps(steps, intent):
     """
-    Exécute les tools dans l'ordre prévu par plan_steps().
+    Exécute les tools dans l'ordre prévu.
     """
 
     results = {}
+    tool_event = event_for_tools(intent["event"])
 
     for step in steps:
-        print(f"  [Agent] ▶ Tool : {step}")
+        print(f"  [Agent] Tool : {step}")
 
-        # ----------------------------------------------------
-        # Tool 1 — Recherche produits
-        # ----------------------------------------------------
         if step == "search_products":
             results["products"] = search_products(
                 category=intent["category"],
@@ -306,37 +545,28 @@ def execute_steps(steps, intent):
                 size=intent["size"],
             )
 
-            print(f"           → {len(results['products'])} produit(s) trouvé(s)")
+            print(f"           -> {len(results['products'])} produit(s) trouvé(s)")
 
-        # ----------------------------------------------------
-        # Tool 2 — Comparaison prix
-        # ----------------------------------------------------
         elif step == "compare_prices":
             results["compared"] = compare_prices(
                 products=results.get("products", []),
                 budget=intent["budget"]
             )
 
-            print(f"           → {len(results['compared'])} produit(s) classé(s)")
+            print(f"           -> {len(results['compared'])} produit(s) classé(s)")
 
-        # ----------------------------------------------------
-        # Tool 3 — Fashion stylist
-        # ----------------------------------------------------
         elif step == "fashion_stylist":
             results["styling"] = fashion_stylist(
                 style=intent["style"],
-                event=intent["event"],
+                event=tool_event,
                 budget=intent["budget"]
             )
 
-        # ----------------------------------------------------
-        # Tool 4 — Outfit builder
-        # ----------------------------------------------------
         elif step == "outfit_builder":
             products_for_outfit = results.get("compared", results.get("products", []))
 
             results["outfit"] = outfit_builder(
-                event=intent["event"],
+                event=tool_event,
                 style=intent["style"],
                 budget=intent["budget"],
                 gender=intent["gender"],
@@ -344,10 +574,9 @@ def execute_steps(steps, intent):
                 products=products_for_outfit
             )
 
-            # Bonus : options alternatives si generate_outfit_options existe
             if generate_outfit_options is not None:
                 results["outfit_options"] = generate_outfit_options(
-                    event=intent["event"],
+                    event=tool_event,
                     style=intent["style"],
                     budget=intent["budget"],
                     gender=intent["gender"],
@@ -355,9 +584,6 @@ def execute_steps(steps, intent):
                     products=products_for_outfit
                 )
 
-        # ----------------------------------------------------
-        # Tool 5 — Négociation / deals
-        # ----------------------------------------------------
         elif step == "negotiate_deal":
             results["deals"] = negotiate_deal(
                 products=results.get("compared", results.get("products", []))
@@ -367,13 +593,12 @@ def execute_steps(steps, intent):
 
 
 # ============================================================
-#  ÉTAPE 4 : FONCTIONS D'ÉVALUATION IA
+# 5. ÉTAPE 4 : FONCTIONS D'ÉVALUATION IA
 # ============================================================
 
 def calculate_simple_score(product, intent):
     """
-    Calcule un score IA pour chaque produit.
-    Ce score rend la recommandation plus intelligente.
+    Calcule un score IA simple pour chaque produit.
     """
 
     score = 0
@@ -382,7 +607,6 @@ def calculate_simple_score(product, intent):
     rating = product.get("rating", 0)
     discount = product.get("discount", 0) or 0
 
-    # Note client
     if rating >= 4.5:
         score += 30
     elif rating >= 4:
@@ -390,33 +614,27 @@ def calculate_simple_score(product, intent):
     elif rating >= 3.5:
         score += 15
 
-    # Budget respecté
     if intent["budget"] and price <= intent["budget"]:
         score += 25
 
-    # Promotion
     if discount > 0:
         score += min(discount, 20)
 
-    # Proximité au budget : on valorise les produits proches du budget (entre 70% et 100%)
     if intent["budget"]:
         ratio = price / intent["budget"]
+
         if 0.70 <= ratio <= 1.0:
-            score += 20      # très proche du budget → bonus fort
+            score += 20
         elif 0.50 <= ratio < 0.70:
-            score += 10      # acceptable
-        elif ratio < 0.50:
-            score += 0       # trop éloigné → pas de bonus
+            score += 10
+
     else:
-        # Sans budget précis : légère préférence pour les prix modérés
         if price <= 150:
             score += 10
 
-    # Correspondance catégorie
     if intent["category"] and product.get("category") == intent["category"]:
         score += 10
 
-    # Correspondance genre
     if intent["gender"] and product.get("gender") == intent["gender"]:
         score += 10
 
@@ -435,227 +653,277 @@ def explain_choice(product, intent):
     discount = product.get("discount", 0) or 0
 
     if intent["budget"] and price <= intent["budget"]:
-        reasons.append("il respecte ton budget")
+        reasons.append("respecte ton budget")
 
     if rating >= 4:
-        reasons.append("il a une bonne note client")
+        reasons.append("a une bonne note client")
 
     if discount > 0:
-        reasons.append("il est en promotion")
+        reasons.append("est en promotion")
 
     if intent["category"] and product.get("category") == intent["category"]:
-        reasons.append(f"il correspond à la catégorie {intent['category']}")
+        reasons.append(f"correspond à la catégorie {intent['category']}")
 
     if intent["gender"] and product.get("gender") == intent["gender"]:
-        reasons.append(f"il est adapté pour {intent['gender']}")
+        reasons.append(f"est adapté pour {intent['gender']}")
 
     if not reasons:
-        return "Ce produit est recommandé car il correspond globalement à ta recherche."
+        return "Il correspond globalement à ta recherche."
 
-    return "Ce produit est recommandé car " + ", ".join(reasons) + "."
+    return "Il " + ", ".join(reasons) + "."
+
+
+def format_product_block(product, intent, index):
+    """
+    Format compact pour un produit.
+    """
+
+    final_price = product.get("final_price", product.get("price", 0))
+    savings = product.get("savings", 0)
+    discount = product.get("discount", 0) or 0
+    promo = f" · promo -{discount}%" if savings > 0 else ""
+
+    gender_label = {
+        "femme": "femme",
+        "homme": "homme",
+        "unisex": "unisex"
+    }.get(product.get("gender"), "")
+
+    ai_score = calculate_simple_score(product, intent)
+    anti_regret = anti_regret_analyzer(product=product, intent=intent)
+
+    risk_label = {
+        "faible": "OK",
+        "moyen": "Moyen",
+        "élevé": "Attention"
+    }.get(anti_regret["risk"], "OK")
+
+    return (
+        f"{index}. **{product.get('name', 'Produit')}** — {format_price(final_price)}{promo}\n"
+        f"   - Genre : {gender_label} · Marque : {product.get('brand', 'N/A')} · Note : {product.get('rating', 'N/A')}/5 · Score IA : {ai_score}/100\n"
+        f"   - Anti-Regret : {risk_label} · risque {anti_regret['risk']} ({anti_regret['score']}/100)\n"
+        f"   - Pourquoi ? {explain_choice(product, intent)}\n"
+        f"   - Lien : {product.get('url', 'Lien non disponible')}"
+    )
 
 
 # ============================================================
-#  ÉTAPE 5 : CONSTRUIRE LA RÉPONSE FINALE
+# 6. ÉTAPE 5 : CONSTRUIRE LA RÉPONSE FINALE
 # ============================================================
 
 def build_response(results, intent, steps=None):
     """
-    Crée la réponse finale affichée à l'utilisateur.
-    Cette réponse est organisée pour être claire dans une interface de chat.
+    Crée une réponse claire, professionnelle et moins encombrée.
     """
 
     lines = []
 
+    event_label = display_label(intent.get("event"))
+    style_label = display_label(intent.get("style"))
+
+    closet_items = intent.get("closet_items", [])
+    gap_analysis = intent.get("gap_analysis")
+
     # --------------------------------------------------------
-    # Raisonnement visible
+    # Résumé intelligent
     # --------------------------------------------------------
-    lines.append("🧠 Raisonnement de l'agent :")
-    lines.append(f"   - Style détecté : {intent['style']}")
-    lines.append(f"   - Événement détecté : {intent['event']}")
+    lines.append("### Résumé intelligent")
+    lines.append(f"- Style détecté : **{style_label}**")
+    lines.append(f"- Événement détecté : **{event_label}**")
 
     if intent["budget"]:
-        lines.append(f"   - Budget détecté : {intent['budget']} DT")
+        lines.append(f"- Budget détecté : **{intent['budget']} DT**")
     else:
-        lines.append("   - Budget non précisé")
+        lines.append("- Budget : **non précisé**")
 
     if intent["category"]:
-        lines.append(f"   - Catégorie détectée : {intent['category']}")
+        lines.append(f"- Catégorie détectée : **{intent['category']}**")
 
     if intent["gender"]:
-        lines.append(f"   - Genre détecté : {intent['gender']}")
+        lines.append(f"- Genre détecté : **{intent['gender']}**")
 
     used_tools = []
 
     if "products" in results:
         used_tools.append("Recherche produits")
-
     if "compared" in results:
         used_tools.append("Comparaison prix")
-
     if "styling" in results:
         used_tools.append("Fashion stylist")
-
     if "outfit" in results:
         used_tools.append("Outfit builder")
-
     if "deals" in results:
         used_tools.append("Négociation / deals")
 
-    lines.append(f"   - Tools utilisés : {', '.join(used_tools)}")
+    lines.append(f"- Tools utilisés : **{', '.join(used_tools)}**")
     lines.append("")
 
     # --------------------------------------------------------
-    # Plan d'action
+    # Wardrobe Twin : seulement pour une tenue complète
     # --------------------------------------------------------
-    if steps:
-        lines.append("📋 Plan d'action :")
-        for i, step in enumerate(steps, 1):
-            lines.append(f"   {i}. {step}")
+    if intent["wants_outfit"] and closet_items:
+        lines.append("### Wardrobe Twin")
+        lines.append("L'agent a détecté les pièces que tu possèdes déjà :")
+
+        for item in closet_items[:8]:
+            lines.append(f"- {item}")
+
+        if len(closet_items) > 8:
+            lines.append(f"- ... et {len(closet_items) - 8} autre(s) pièce(s)")
+
         lines.append("")
 
     # --------------------------------------------------------
-    # Introduction personnalisée
+    # Closet Gap Analyzer : seulement pour une tenue complète
+    # --------------------------------------------------------
+    if intent["wants_outfit"] and closet_items and gap_analysis:
+        required = gap_analysis.get("required", [])
+        covered = gap_analysis.get("covered", [])
+        missing = gap_analysis.get("missing", [])
+
+        lines.append("### Closet Gap Analyzer")
+        lines.append(f"Pour **{event_label}**, une tenue cohérente demande : **{', '.join(required)}**.")
+
+        if covered:
+            lines.append(f"- Pièces déjà couvertes par ta garde-robe : **{', '.join(covered)}**")
+        else:
+            lines.append("- Aucune pièce essentielle n'est clairement couverte par ta garde-robe.")
+
+        if missing:
+            lines.append(f"- Pièces manquantes à compléter : **{', '.join(missing)}**")
+        else:
+            lines.append("- Bonne nouvelle : ta garde-robe couvre déjà les pièces principales.")
+
+        lines.append("")
+
+    # --------------------------------------------------------
+    # Introduction
     # --------------------------------------------------------
     if intent["wants_outfit"]:
-        intro = f"Voici une tenue complète pour {intent['event']} (style {intent['style']})"
+        intro = f"### Tenue proposée pour {event_label}"
 
         if intent["budget"]:
-            intro += f" — budget {intent['budget']} DT"
+            intro += f" — budget **{intent['budget']} DT**"
 
-        lines.append(intro + " :\n")
+        lines.append(intro)
+        lines.append("")
 
     elif intent["wants_styling"]:
-        lines.append(f"Pour un look {intent['style']} ({intent['event']}), voici mes suggestions :\n")
+        lines.append(f"### Suggestions pour un look {style_label} ({event_label})")
+        lines.append("")
 
     else:
-        intro = "Voici les produits correspondant à ta demande"
-        filters = []
-
-        if intent["gender"]:
-            filters.append(intent["gender"])
-
-        if intent["category"]:
-            filters.append(intent["category"])
-
-        if intent["color"]:
-            filters.append("couleur " + intent["color"])
-
-        if intent["brand"]:
-            filters.append(intent["brand"])
-
-        if intent["budget"]:
-            filters.append(f"budget {intent['budget']} DT")
-
-        if filters:
-            intro += f" ({', '.join(filters)})"
-
-        lines.append(intro + " :\n")
+        lines.append("### Produits recommandés")
+        lines.append("")
 
     # --------------------------------------------------------
-    # Top produits
+    # Produits recommandés
     # --------------------------------------------------------
     compared = results.get("compared", [])
 
-    # ── Tri affiné pour le top 3 : prioriser les produits proches du budget
     if compared and intent["budget"]:
         budget = intent["budget"]
-        # Séparer produits dans le budget vs hors budget
-        in_budget  = [p for p in compared if p.get("final_price", p["price"]) <= budget]
-        out_budget = [p for p in compared if p.get("final_price", p["price"]) >  budget]
 
-        # Dans le budget : trier par proximité décroissante (les plus chers en premier)
+        in_budget = [
+            p for p in compared
+            if p.get("final_price", p["price"]) <= budget
+        ]
+
+        out_budget = [
+            p for p in compared
+            if p.get("final_price", p["price"]) > budget
+        ]
+
         in_budget.sort(key=lambda p: p.get("final_price", p["price"]), reverse=True)
-
-        # Hors budget : trier par écart croissant (le moins cher hors budget en premier)
         out_budget.sort(key=lambda p: p.get("final_price", p["price"]))
 
         compared_display = in_budget + out_budget
+
     else:
         compared_display = compared
 
-    if compared:
-        lines.append("🏆 Meilleurs choix :")
+    # Recherche simple : afficher les produits
+    # Tenue complète : ne pas afficher cette longue liste pour éviter l'encombrement
+    if compared and not intent["wants_outfit"]:
+        lines.append("### Meilleurs choix")
 
-        for i, product in enumerate(compared_display[:3]):
-            final_price = product.get("final_price", product.get("price", 0))
-            savings = product.get("savings", 0)
-            discount = product.get("discount", 0) or 0
-            promo = f" (promo -{discount}% ✨)" if savings > 0 else ""
-
-            colors = ", ".join(product.get("colors", [])[:2])
-            sizes = "/".join(product.get("sizes", [])[:4])
-            gender_label = {"femme": "👩", "homme": "👨"}.get(product.get("gender"), "")
-
-            ai_score = calculate_simple_score(product, intent)
-
-            lines.append(
-                f"  {i+1}. {gender_label} {product['name']} — {final_price} DT{promo}\n"
-                f"     Marque : {product['brand']}  |  Note : {product['rating']}/5  |  Score IA : {ai_score}/100\n"
-                f"     Couleurs : {colors}  |  Tailles : {sizes}\n"
-                f"     Pourquoi ? {explain_choice(product, intent)}\n"
-                f"     🔗 {product['url']}"
-            )
-
-        lines.append("")
+        for i, product in enumerate(compared_display[:3], start=1):
+            lines.append(format_product_block(product, intent, i))
+            lines.append("")
 
     # --------------------------------------------------------
-    # Conseil styliste
+    # Conseil style
     # --------------------------------------------------------
     styling = results.get("styling")
 
     if styling:
-        lines.append(f"💡 Conseil style : {styling['tip']}\n")
+        lines.append("### Conseil style")
+        lines.append(styling["tip"])
+        lines.append("")
+
     # --------------------------------------------------------
     # Tenue complète
     # --------------------------------------------------------
     outfit = results.get("outfit")
 
     if outfit:
-        lines.append("👗 Tenue complète :")
-        lines.append(f"   Haut        : {outfit['top']}")
-        lines.append(f"   Bas         : {outfit['bottom']}")
-        lines.append(f"   Chaussures  : {outfit['shoes']}")
-        lines.append(f"   Accessoire  : {outfit['accessory']}")
-        lines.append(f"   💰 Total estimé : {outfit['total_price']} DT")
+        lines.append("### Tenue complète")
+        lines.append(f"- Haut : **{outfit['top']}**")
+        lines.append(f"- Bas : **{outfit['bottom']}**")
+        lines.append(f"- Chaussures : **{outfit['shoes']}**")
+        lines.append(f"- Accessoire : **{outfit['accessory']}**")
+        lines.append(f"- Total estimé : **{format_price(outfit['total_price'])}**")
 
-        # Si tools_bonus.py n'a pas trouvé toutes les pièces sans dépasser le budget
+        outfit_regret = anti_regret_analyzer(outfit=outfit, intent=intent)
+
+        lines.append(
+            f"- Anti-Regret : **risque {outfit_regret['risk']}** "
+            f"({outfit_regret['score']}/100)"
+        )
+
+        for reason in outfit_regret["reasons"][:3]:
+            lines.append(f"- {reason}")
+
         if outfit.get("missing_items"):
-            lines.append(f"   ⚠️ Tenue incomplète : éléments manquants → {', '.join(outfit['missing_items'])}.")
-            lines.append("   Cela arrive parce que l'agent essaie de respecter ton budget.\n")
+            missing_catalogue = ", ".join(outfit["missing_items"])
+            lines.append(f"- Pièces manquantes dans le catalogue : **{missing_catalogue}**")
+            lines.append("- L'agent évite de dépasser ton budget, donc la tenue peut être partielle.")
 
-        # Vérification budget
         if intent["budget"] and outfit["total_price"] > intent["budget"]:
             difference = round(outfit["total_price"] - intent["budget"], 2)
-            lines.append(f"   ⚠️ Cette tenue dépasse le budget de {difference} DT.")
-            lines.append("   Je recommande d'augmenter le budget ou de retirer un accessoire.")
-            lines.append("   💡 Alternative budget : privilégier les produits en promotion ou supprimer l'accessoire.\n")
+            lines.append(f"- Cette tenue dépasse le budget de **{difference} DT**.")
+            lines.append("- Alternative : augmenter légèrement le budget ou retirer une pièce secondaire.")
 
         elif intent["budget"]:
             remaining = round(intent["budget"] - outfit["total_price"], 2)
-            lines.append(f"   ✅ Cette tenue respecte ton budget. Budget restant : {remaining} DT.\n")
+            lines.append(f"- Budget restant : **{remaining} DT**")
 
-        else:
-            lines.append("")
+        lines.append(f"- Conseil : {outfit_regret['advice']}")
+        lines.append("")
 
     # --------------------------------------------------------
-    # Options alternatives
+    # Options alternatives compactes
     # --------------------------------------------------------
     outfit_options = results.get("outfit_options", [])
 
-    if outfit_options:
-        lines.append("✨ Options alternatives :")
+    if outfit_options and intent["wants_outfit"]:
+        lines.append("### Options alternatives")
 
         for option in outfit_options:
             outfit_data = option["outfit"]
+            missing = outfit_data.get("missing_items", [])
+            status = "complète" if not missing else "incomplète"
 
-            lines.append(f"   {option['label']} — {outfit_data['total_price']} DT")
-            lines.append(f"      {option['description']}")
-            lines.append(f"      Haut : {outfit_data['top']}")
-            lines.append(f"      Bas : {outfit_data['bottom']}")
-            lines.append(f"      Chaussures : {outfit_data['shoes']}")
-            lines.append(f"      Accessoire : {outfit_data['accessory']}")
-            lines.append("")
+            lines.append(
+                f"- **{option['label']}** — {format_price(outfit_data['total_price'])} ({status})"
+            )
+
+            lines.append(
+                f"  Haut : {outfit_data['top']} · Bas : {outfit_data['bottom']} · "
+                f"Chaussures : {outfit_data['shoes']} · Accessoire : {outfit_data['accessory']}"
+            )
+
+        lines.append("")
 
     # --------------------------------------------------------
     # Deals / promotions
@@ -663,240 +931,243 @@ def build_response(results, intent, steps=None):
     deals = results.get("deals", [])
 
     if deals:
-        lines.append("🔥 Meilleures offres du moment :")
+        lines.append("### Meilleures offres du moment")
 
         for deal in deals:
             lines.append(
-                f"   - {deal['name']} : {deal['original_price']} DT → {deal['discounted_price']} DT"
-                f"  (-{deal['discount']}%)"
+                f"- {deal['name']} : {deal['original_price']} DT -> "
+                f"{deal['discounted_price']} DT (-{deal['discount']}%)"
             )
+
+        lines.append("")
 
     # --------------------------------------------------------
     # Aucun résultat
     # --------------------------------------------------------
     if not compared and not outfit and not deals:
-        lines.append("😕 Aucun produit trouvé avec ces critères.")
-        lines.append("   Essaie d'élargir ton budget ou de changer de style.")
+        lines.append("Aucun produit trouvé avec ces critères.")
+        lines.append("Essaie d'élargir ton budget, de changer le style ou de préciser l'occasion.")
+        lines.append("")
 
     # --------------------------------------------------------
     # Décision finale
     # --------------------------------------------------------
-    lines.append("")
-    lines.append("✅ Décision finale de l'agent :")
+    lines.append("### Décision finale de l'agent")
 
     if intent["budget"]:
-        lines.append("   J'ai privilégié les produits avec le meilleur rapport qualité/prix selon ton budget.")
+        lines.append("- J'ai privilégié les choix cohérents avec ton budget.")
     else:
-        lines.append("   Comme aucun budget précis n'a été donné, j'ai proposé des options variées.")
+        lines.append("- Comme aucun budget précis n'a été donné, j'ai proposé des options variées.")
+
+    if intent["wants_outfit"] and closet_items and gap_analysis:
+        missing = gap_analysis.get("missing", [])
+
+        if missing:
+            lines.append("- Grâce au Wardrobe Twin, l'agent identifie les pièces déjà possédées et les pièces à compléter.")
+        else:
+            lines.append("- Grâce au Wardrobe Twin, ta garde-robe couvre déjà les pièces principales.")
 
     if intent["style"]:
-        lines.append(f"   Le style principal retenu est : {intent['style']}.")
+        lines.append(f"- Style principal retenu : **{style_label}**.")
 
-    lines.append("   La recommandation combine prix, style, note client et promotions disponibles.")
+    if intent["wants_outfit"] and outfit and outfit.get("missing_items"):
+        lines.append("- La tenue est partielle : l'agent préfère éviter de dépasser ton budget.")
+    else:
+        lines.append("- La recommandation combine prix, style, garde-robe, note client, promotions et risque de regret.")
 
-    return "\n".join(lines)
+    return "\n\n".join(lines)
 
 
 # ============================================================
-#  ÉTAPE 6 : INTERACTION DYNAMIQUE
+# 7. ÉTAPE 6 : INTERACTION DYNAMIQUE
 # ============================================================
 
 def detect_missing_info(intent):
     """
     Détecte les informations importantes manquantes.
-    On ne bloque pas sur l'occasion car 'casual' peut être une valeur par défaut acceptable.
     """
 
     missing = []
 
-    # Pour construire une tenue complète, le budget est important.
     if intent["wants_outfit"] and not intent["budget"]:
         missing.append("budget")
 
-    # Pour construire une tenue complète, le genre aide à choisir les bons produits.
     if intent["wants_outfit"] and not intent["gender"]:
         missing.append("genre")
+
+    if intent["wants_outfit"] and not intent["event"] and not intent["style"]:
+        missing.append("occasion")
 
     return missing
 
 
 # ============================================================
-#  ÉTAPE 7 : FONCTION PRINCIPALE DE L'AGENT
+# 8. ÉTAPE 7 : FONCTION PRINCIPALE DE L'AGENT
 # ============================================================
 
-# Contexte persistant entre les tours de conversation
 _pending_intent = None
 
 
 def merge_intents(base, update):
     """
-    Fusionne deux intents : garde les valeurs de `base` si `update` ne les fournit pas.
-    Les booléens sont combinés avec OR (un True dans l'un suffit).
+    Fusionne deux intents : garde les valeurs précédentes si le nouveau message ne les fournit pas.
     """
+
     merged = {}
     bool_keys = {"wants_styling", "wants_search", "wants_deal", "wants_outfit"}
+
     for key in base:
         base_val = base[key]
-        upd_val  = update.get(key)
+        upd_val = update.get(key)
+
         if key in bool_keys:
             merged[key] = base_val or upd_val
         else:
-            # Garder la valeur du nouveau message si elle est non-None, sinon celle du précédent
             merged[key] = upd_val if upd_val is not None else base_val
-
-    # Appliquer le fallback "casual" sur event uniquement (style a toujours une valeur)
-    if merged.get("event") is None:
-        merged["event"] = "casual"
-
-    if merged.get("event") is None:
-        merged["event"] = "casual"
-
-    if merged.get("style") is None:
-        merged["style"] = "casual"
 
     return merged
 
 
-def run_agent(user_message):
+def apply_defaults(intent):
+    """
+    Applique des valeurs par défaut seulement quand c'est nécessaire.
+    """
+
+    if intent.get("event") is None:
+        intent["event"] = "casual"
+
+    if intent.get("style") is None:
+        intent["style"] = "casual"
+
+    return intent
+
+
+def run_agent(user_message, closet_items=None):
     """
     Point d'entrée principal de l'agent.
+    Compatible avec :
+    - run_agent(message)
+    - run_agent(message, closet_items="chemise blanche, pantalon noir")
     """
+
     global _pending_intent
 
-    print(f"\n{'='*55}")
+    print(f"\n{'=' * 55}")
     print(f"[Agent] Message reçu : {user_message}")
-    print(f"{'='*55}")
+    print(f"{'=' * 55}")
 
-    # 1. Analyse de l'intention du message courant
     intent = analyze_intent(user_message)
 
-    # 2. Fusionner avec l'intent en attente (si une question de suivi avait été posée)
     if _pending_intent is not None:
         intent = merge_intents(_pending_intent, intent)
-        _pending_intent = None  # réinitialiser après fusion
-    else:
-        # Pas de fusion : appliquer le fallback "casual" sur event uniquement
-        if intent.get("event") is None:
-            intent["event"] = "casual"
+        _pending_intent = None
 
-        if intent.get("style") is None:
-            intent["style"] = "casual"
-
-    # 3. Interaction dynamique si information importante manquante
+    # Interaction dynamique avant d'appliquer les valeurs par défaut.
     missing = detect_missing_info(intent)
 
     if "budget" in missing:
-        _pending_intent = intent  # sauvegarder l'intent courant pour le prochain tour
+        _pending_intent = intent
         return (
-            "Pour construire une tenue complète adaptée, peux-tu préciser ton budget ?\n"
-            "Exemples : 100 DT, 150 DT ou 300 DT."
+            "Pour construire une tenue complète adaptée, peux-tu préciser ton budget ?\n\n"
+            "Exemples : **100 DT**, **150 DT** ou **300 DT**."
         )
 
     if "genre" in missing:
-        _pending_intent = intent  # sauvegarder l'intent courant pour le prochain tour
+        _pending_intent = intent
         return (
-            "Pour mieux choisir les produits, peux-tu préciser si la tenue est pour homme ou femme ?\n"
-            "Exemple : tenue chic femme 150dt ou tenue chic homme 150dt."
+            "Pour mieux choisir les produits, peux-tu préciser si la tenue est pour **homme** ou **femme** ?\n\n"
+            "Exemple : **tenue chic femme 150dt** ou **tenue chic homme 150dt**."
         )
 
-    # 4. Affichage debug dans le terminal
+    if "occasion" in missing:
+        _pending_intent = intent
+        return (
+            "Pour éviter une tenue trop générique, peux-tu préciser l'occasion ?\n\n"
+            "Exemples : **soutenance**, **mariage**, **soirée**, **travail**, **université** ou **casual**."
+        )
+
+    intent = apply_defaults(intent)
+    intent = attach_closet_to_intent(intent, closet_items)
+
     print("[Agent] Intention détectée :")
     for key, value in intent.items():
-        if value is not None and value is not False:
-            print(f"  {key:<18} → {value}")
+        if key in ["closet_analysis", "gap_analysis"]:
+            continue
 
-    # 4. Planification
+        if value is not None and value is not False:
+            print(f"  {key:<18} -> {value}")
+
     steps = plan_steps(intent)
 
     print(f"\n[Agent] Plan d'action : {steps}")
     print()
 
-    # 5. Exécution des tools
     results = execute_steps(steps, intent)
 
-    # 6. Réponse finale
     final_response = build_response(results, intent, steps)
 
     return final_response
 
 
 # ============================================================
-#  ÉTAPE 8 : TESTS ET CHAT INTERACTIF
+# 9. ÉTAPE 8 : TESTS ET CHAT INTERACTIF
 # ============================================================
 
 if __name__ == "__main__":
 
     tests = [
         (
-            "TEST 1 — Robe chic mariage femme 200 DT",
-            "je veux une robe chic pour un mariage femme 200dt"
+            "TEST 1 - Recherche simple sneakers",
+            "je cherche sneakers homme 150 dt",
+            "chemise blanche, pantalon noir"
         ),
         (
-            "TEST 2 — Tenue complète soirée femme 300 DT",
-            "je veux une tenue complète pour une soirée femme 300dt"
+            "TEST 2 - Tenue soutenance avec garde-robe",
+            "je veux une tenue complete pour une soutenance femme 150dt",
+            "chemise blanche, pantalon noir, baskets blanches"
         ),
         (
-            "TEST 3 — Sneakers sport homme 120 DT",
-            "je cherche des sneakers sport pour homme 120dt"
+            "TEST 3 - Tenue soirée femme",
+            "je veux une tenue complete pour une soirée femme 250dt",
+            "robe noire, escarpins nude"
         ),
         (
-            "TEST 4 — Sac noir chic femme sans budget",
-            "trouve moi un sac noir chic pour femme"
-        ),
-        (
-            "TEST 5 — Réduction pantalon homme 100 DT",
-            "cherche une réduction sur un pantalon homme 100dt"
-        ),
-        (
-            "TEST 6 — Blazer Zara femme taille M",
-            "je veux un blazer Zara femme taille M"
-        ),
-        (
-            "TEST 7 — Tenue casual homme budget limité 80 DT",
-            "tenue casual homme 80dt"
+            "TEST 4 - Demande vague",
+            "je veux une tenue pour homme 170dt",
+            "jean bleu, baskets blanches"
         ),
     ]
 
-    # --------------------------------------------------------
-    # Tests automatiques
-    # --------------------------------------------------------
-    for title, message in tests:
-        print(f"\n{'#'*55}")
+    for title, message, closet in tests:
+        print(f"\n{'#' * 55}")
         print(f"  {title}")
-        print(f"{'#'*55}")
+        print(f"{'#' * 55}")
 
-        response = run_agent(message)
+        response = run_agent(message, closet_items=closet)
 
-        print(f"\n{'─'*55}")
+        print(f"\n{'-' * 55}")
         print("  RÉPONSE DE L'AGENT :")
-        print(f"{'─'*55}")
+        print(f"{'-' * 55}")
         print(response)
 
-    # --------------------------------------------------------
-    # Chat interactif en boucle
-    # --------------------------------------------------------
-    print(f"\n{'#'*55}")
+    print(f"\n{'#' * 55}")
     print("  CHAT INTERACTIF — écris ta propre demande")
-    print(f"{'#'*55}")
-    print("  Exemples :")
-    print("    'je veux une robe casual femme 80dt'")
-    print("    'tenue complète soirée femme 250dt'")
-    print("    'cherche une réduction sac femme noir'")
-    print("    'sneakers homme blanc 110dt'")
-    print("    'tenue casual homme 80dt'")
+    print(f"{'#' * 55}")
     print("  Tape 'exit' pour quitter.")
-    print(f"{'─'*55}")
+    print(f"{'-' * 55}")
 
     while True:
         user_message = input("Toi : ")
- 
+
         if user_message.lower().strip() in ["exit", "quit", "q"]:
             print("Agent : Merci, à bientôt !")
             break
 
-        response = run_agent(user_message)
+        closet = input("Ta garde-robe actuelle (optionnel) : ")
 
-        print(f"\n{'─'*55}")
+        response = run_agent(user_message, closet_items=closet)
+
+        print(f"\n{'-' * 55}")
         print("  RÉPONSE DE L'AGENT :")
-        print(f"{'─'*55}")
+        print(f"{'-' * 55}")
         print(response)
