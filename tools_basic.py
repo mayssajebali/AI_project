@@ -21,7 +21,15 @@ def load_catalogue():
     catalogue_path = os.path.join(base_dir, "catalogue.json")
 
     with open(catalogue_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+
+    if isinstance(data, dict) and "products" in data:
+        return data["products"]
+
+    if isinstance(data, list):
+        return data
+
+    return []
 
 
 # ============================================================
@@ -207,8 +215,8 @@ def compare_prices(products=None, budget=None):
         produits_enrichis,
         key=lambda p: (
             0 if p["in_budget"] else 1,
-            p["final_price"],
-            -p["value_score"]
+            -p["value_score"],   # meilleur score en premier
+            p["final_price"]     # à égalité, prix croissant
         )
     )
 

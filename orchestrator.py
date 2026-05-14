@@ -101,7 +101,7 @@ def extract_event(msg):
     if re.search(r"sport|gym|fitness|running", msg):
         return "sport"
 
-    return "casual"
+    return None  # pas d'occasion explicite détectée
 
 
 def extract_style(msg):
@@ -130,7 +130,7 @@ def extract_style(msg):
     if re.search(r"travail|bureau|professionnel", msg):
         return "travail"
 
-    return "casual"
+    return None
 
 
 def extract_category(msg):
@@ -398,11 +398,19 @@ def calculate_simple_score(product, intent):
     if discount > 0:
         score += min(discount, 20)
 
-    # Prix raisonnable
-    if price <= 100:
-        score += 15
-    elif price <= 200:
-        score += 10
+    # Proximité au budget : on valorise les produits proches du budget (entre 70% et 100%)
+    if intent["budget"]:
+        ratio = price / intent["budget"]
+        if 0.70 <= ratio <= 1.0:
+            score += 20      # très proche du budget → bonus fort
+        elif 0.50 <= ratio < 0.70:
+            score += 10      # acceptable
+        elif ratio < 0.50:
+            score += 0       # trop éloigné → pas de bonus
+    else:
+        # Sans budget précis : légère préférence pour les prix modérés
+        if price <= 150:
+            score += 10
 
     # Correspondance catégorie
     if intent["category"] and product.get("category") == intent["category"]:
@@ -549,10 +557,27 @@ def build_response(results, intent, steps=None):
     # --------------------------------------------------------
     compared = results.get("compared", [])
 
+    # ── Tri affiné pour le top 3 : prioriser les produits proches du budget
+    if compared and intent["budget"]:
+        budget = intent["budget"]
+        # Séparer produits dans le budget vs hors budget
+        in_budget  = [p for p in compared if p.get("final_price", p["price"]) <= budget]
+        out_budget = [p for p in compared if p.get("final_price", p["price"]) >  budget]
+
+        # Dans le budget : trier par proximité décroissante (les plus chers en premier)
+        in_budget.sort(key=lambda p: p.get("final_price", p["price"]), reverse=True)
+
+        # Hors budget : trier par écart croissant (le moins cher hors budget en premier)
+        out_budget.sort(key=lambda p: p.get("final_price", p["price"]))
+
+        compared_display = in_budget + out_budget
+    else:
+        compared_display = compared
+
     if compared:
         lines.append("🏆 Meilleurs choix :")
 
-        for i, product in enumerate(compared[:3]):
+        for i, product in enumerate(compared_display[:3]):
             final_price = product.get("final_price", product.get("price", 0))
             savings = product.get("savings", 0)
             discount = product.get("discount", 0) or 0
@@ -581,11 +606,6 @@ def build_response(results, intent, steps=None):
 
     if styling:
         lines.append(f"💡 Conseil style : {styling['tip']}\n")
-
-    # --------------------------------------------------------
-    # Tenue complète
-    # --------------------------------------------------------
-    outfit = results.get("outfit")
     # --------------------------------------------------------
     # Tenue complète
     # --------------------------------------------------------
@@ -704,34 +724,82 @@ def detect_missing_info(intent):
 #  ÉTAPE 7 : FONCTION PRINCIPALE DE L'AGENT
 # ============================================================
 
+# Contexte persistant entre les tours de conversation
+_pending_intent = None
+
+
+def merge_intents(base, update):
+    """
+    Fusionne deux intents : garde les valeurs de `base` si `update` ne les fournit pas.
+    Les booléens sont combinés avec OR (un True dans l'un suffit).
+    """
+    merged = {}
+    bool_keys = {"wants_styling", "wants_search", "wants_deal", "wants_outfit"}
+    for key in base:
+        base_val = base[key]
+        upd_val  = update.get(key)
+        if key in bool_keys:
+            merged[key] = base_val or upd_val
+        else:
+            # Garder la valeur du nouveau message si elle est non-None, sinon celle du précédent
+            merged[key] = upd_val if upd_val is not None else base_val
+
+    # Appliquer le fallback "casual" sur event uniquement (style a toujours une valeur)
+    if merged.get("event") is None:
+        merged["event"] = "casual"
+
+    if merged.get("event") is None:
+        merged["event"] = "casual"
+
+    if merged.get("style") is None:
+        merged["style"] = "casual"
+
+    return merged
+
+
 def run_agent(user_message):
     """
     Point d'entrée principal de l'agent.
     """
+    global _pending_intent
 
     print(f"\n{'='*55}")
     print(f"[Agent] Message reçu : {user_message}")
     print(f"{'='*55}")
 
-    # 1. Analyse de l'intention
+    # 1. Analyse de l'intention du message courant
     intent = analyze_intent(user_message)
 
-    # 2. Interaction dynamique si information importante manquante
+    # 2. Fusionner avec l'intent en attente (si une question de suivi avait été posée)
+    if _pending_intent is not None:
+        intent = merge_intents(_pending_intent, intent)
+        _pending_intent = None  # réinitialiser après fusion
+    else:
+        # Pas de fusion : appliquer le fallback "casual" sur event uniquement
+        if intent.get("event") is None:
+            intent["event"] = "casual"
+
+        if intent.get("style") is None:
+            intent["style"] = "casual"
+
+    # 3. Interaction dynamique si information importante manquante
     missing = detect_missing_info(intent)
 
     if "budget" in missing:
+        _pending_intent = intent  # sauvegarder l'intent courant pour le prochain tour
         return (
             "Pour construire une tenue complète adaptée, peux-tu préciser ton budget ?\n"
             "Exemples : 100 DT, 150 DT ou 300 DT."
         )
 
     if "genre" in missing:
+        _pending_intent = intent  # sauvegarder l'intent courant pour le prochain tour
         return (
             "Pour mieux choisir les produits, peux-tu préciser si la tenue est pour homme ou femme ?\n"
             "Exemple : tenue chic femme 150dt ou tenue chic homme 150dt."
         )
 
-    # 3. Affichage debug dans le terminal
+    # 4. Affichage debug dans le terminal
     print("[Agent] Intention détectée :")
     for key, value in intent.items():
         if value is not None and value is not False:
@@ -821,7 +889,7 @@ if __name__ == "__main__":
 
     while True:
         user_message = input("Toi : ")
-
+ 
         if user_message.lower().strip() in ["exit", "quit", "q"]:
             print("Agent : Merci, à bientôt !")
             break

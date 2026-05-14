@@ -13,7 +13,6 @@
 
 import json
 import os
-print("✅ NOUVELLE VERSION tools_bonus.py CHARGÉE")
 
 # ============================================================
 # 1. CHARGEMENT DU CATALOGUE JSON
@@ -74,7 +73,6 @@ def fashion_stylist(style=None, event=None, budget=None):
 
     tips_by_event = {
         "mariage": "Pour un mariage, choisis une tenue élégante avec des couleurs sobres ou pastel. Évite les pièces trop sportives.",
-        "soirée": "Pour une soirée, privilégie une pièce forte comme un haut satiné, une robe élégante ou des chaussures habillées.",
         "soiree": "Pour une soirée, privilégie une pièce forte comme un haut satiné, une robe élégante ou des chaussures habillées.",
         "travail": "Pour le travail, choisis un look professionnel : blazer, pantalon droit, chemise simple et couleurs neutres.",
         "plage": "Pour la plage, choisis des matières légères comme le lin ou le coton, avec des couleurs claires.",
@@ -141,7 +139,8 @@ def product_has_color(product, color):
     colors = product.get("colors", [])
 
     if isinstance(colors, list):
-        return color in colors
+        color_lower = color.lower()
+        return any(color_lower in c.lower() for c in colors)
 
     if isinstance(colors, str):
         return color.lower() in colors.lower()
@@ -222,7 +221,7 @@ def is_bad_for_event(product, event):
         ]
         return any(word in name for word in banned_words)
 
-    if event == "soirée" or event == "soiree":
+    if event == "soiree":
         banned_words = [
             "short de bain", "tongs", "running", "sport"
         ]
@@ -266,12 +265,12 @@ def calculate_product_score(product, budget=None, event=None):
         score += 25
 
     # Prix raisonnable
-    if price <= 50:
-        score += 15
-    elif price <= 100:
-        score += 10
-    elif price <= 200:
-        score += 5
+    if budget and budget > 0:
+        ratio = price / budget
+        if 0.6 <= ratio <= 1.0:
+            score += 20  # utilise bien le budget
+        elif ratio < 0.4:
+            score += 2
 
     # Pénalité si incohérent avec l'événement
     if is_bad_for_event(product, event):
@@ -371,13 +370,8 @@ def select_best_product(
         return None
 
     # Trier par score élevé, puis prix plus bas
-    candidates.sort(
-        key=lambda product: (
-            product.get("ai_score", 0),
-            -product.get("final_price", 0)
-        ),
-        reverse=True
-    )
+    candidates.sort(key=lambda p: (-p.get("ai_score",0), p.get("final_price",0)))
+
 
     return candidates[0]
 
