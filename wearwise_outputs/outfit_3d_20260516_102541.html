@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WearWise AI — 3D Outfit Viewer</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    background: linear-gradient(135deg, #020617 0%, #0F172A 48%, #111827 100%);
+    font-family: system-ui, sans-serif;
+    overflow: hidden;
+    width: 100vw; height: 100vh;
+}
+#canvas-container {
+    width: 100%; height: 100vh;
+    position: relative;
+}
+canvas { display: block; }
+#ui {
+    position: absolute; bottom: 24px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; gap: 12px; align-items: center;
+    background: rgba(15,23,42,0.85);
+    border: 1px solid rgba(192,132,252,0.35);
+    border-radius: 999px;
+    padding: 10px 20px;
+    backdrop-filter: blur(8px);
+}
+#ui span {
+    color: #CBD5E1; font-size: 13px; font-weight: 500;
+}
+#ui .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #C084FC;
+}
+#label {
+    position: absolute; top: 20px; left: 50%;
+    transform: translateX(-50%);
+    color: #F8FAFC; font-size: 15px; font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(15,23,42,0.7);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: 8px 20px;
+    backdrop-filter: blur(6px);
+}
+#reset-btn {
+    position: absolute; top: 20px; right: 24px;
+    background: rgba(192,132,252,0.15);
+    border: 1px solid rgba(192,132,252,0.4);
+    color: #C084FC; font-size: 13px; font-weight: 600;
+    border-radius: 10px; padding: 8px 16px;
+    cursor: pointer; backdrop-filter: blur(4px);
+    transition: background 0.2s;
+}
+#reset-btn:hover { background: rgba(192,132,252,0.28); }
+</style>
+</head>
+<body>
+<div id="canvas-container">
+    <div id="label">WearWise AI — Outfit 3D</div>
+    <button id="reset-btn" onclick="resetCamera()">Reset vue</button>
+    <div id="ui">
+        <div class="dot"></div>
+        <span>Glisse pour pivoter</span>
+        <div class="dot"></div>
+        <span>Scroll pour zoomer</span>
+        <div class="dot"></div>
+        <span>Clic droit pour déplacer</span>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const IMAGE_URL = "https://image.pollinations.ai/prompt/fashion%20editorial%20photo%2C%20full%20body%20shot%2C%20professional%20fashion%20photography%2C%20elegant%20woman%2C%20wearing%20sweatshirt%20hoodie%20oversize%2C%20shgoldts%20cycliste%2C%20shoes%20de%20spgoldt%20montantes%2C%20with%20non%20trouv%C3%A9%2C%20athletic%20sporty%20style%2C%20activewear%2C%20gym%20background%2C%20clean%2C%20bright%2C%20high%20quality%2C%20realistic%2C%20sharp%20details%2C%20beautiful%20lighting%2C%204k?width=512&height=768&nologo=true&enhance=true&model=flux&seed=586572";
+const OUTFIT_INFO = {"top": "Sweat hoodie oversize", "bottom": "Short cycliste", "shoes": "Chaussures de sport montantes", "accessory": "Non trouvé", "event": "sport", "style": "sport", "gender": "femme"};
+
+const container = document.getElementById('canvas-container');
+const W = container.clientWidth;
+const H = container.clientHeight;
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(W, H);
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+container.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = null;
+
+const camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
+camera.position.set(0, 1.2, 3.8);
+camera.lookAt(0, 1.0, 0);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.9);
+dirLight.position.set(2, 4, 3);
+dirLight.castShadow = true;
+scene.add(dirLight);
+
+const fillLight = new THREE.DirectionalLight(0xC084FC, 0.3);
+fillLight.position.set(-3, 2, -2);
+scene.add(fillLight);
+
+const rimLight = new THREE.DirectionalLight(0x38BDF8, 0.2);
+rimLight.position.set(0, -1, -3);
+scene.add(rimLight);
+
+const mannequinGroup = new THREE.Group();
+scene.add(mannequinGroup);
+
+const mat = new THREE.MeshStandardMaterial({
+    color: 0x1E293B,
+    roughness: 0.6,
+    metalness: 0.1,
+});
+
+function addPart(geom, x, y, z, rx=0, ry=0, rz=0) {
+    const mesh = new THREE.Mesh(geom, mat.clone());
+    mesh.position.set(x, y, z);
+    mesh.rotation.set(rx, ry, rz);
+    mesh.castShadow = true;
+    mannequinGroup.add(mesh);
+    return mesh;
+}
+
+const torsoGeo  = new THREE.CylinderGeometry(0.28, 0.22, 0.75, 32);
+const torso     = addPart(torsoGeo,   0,    1.55, 0);
+
+const chestGeo  = new THREE.SphereGeometry(0.30, 32, 16, 0, Math.PI*2, 0, Math.PI/2);
+addPart(chestGeo, 0, 1.93, 0);
+
+const hipGeo    = new THREE.CylinderGeometry(0.26, 0.28, 0.20, 32);
+addPart(hipGeo,   0,    1.12, 0);
+
+const neckGeo   = new THREE.CylinderGeometry(0.08, 0.10, 0.18, 16);
+addPart(neckGeo,  0,    2.10, 0);
+
+const headGeo   = new THREE.SphereGeometry(0.22, 32, 32);
+addPart(headGeo,  0,    2.40, 0);
+
+const uArmGeo   = new THREE.CylinderGeometry(0.075, 0.065, 0.42, 16);
+const lArmGeo   = new THREE.CylinderGeometry(0.065, 0.055, 0.40, 16);
+const handGeo   = new THREE.SphereGeometry(0.065, 16, 16);
+
+[[-0.40, 1.82], [0.40, 1.82]].forEach(([x, y]) => {
+    const sign = x < 0 ? -1 : 1;
+    addPart(uArmGeo, x + sign*0.02, y - 0.21, 0, 0, 0, sign*0.15);
+    addPart(lArmGeo, x + sign*0.06, y - 0.65, 0, 0, 0, sign*0.12);
+    addPart(handGeo, x + sign*0.10, y - 0.89, 0);
+});
+
+const uLegGeo   = new THREE.CylinderGeometry(0.11, 0.095, 0.52, 16);
+const lLegGeo   = new THREE.CylinderGeometry(0.09, 0.075, 0.50, 16);
+const footGeo   = new THREE.BoxGeometry(0.13, 0.08, 0.26);
+
+[[-0.15, 1.0], [0.15, 1.0]].forEach(([x, y]) => {
+    const sign = x < 0 ? -1 : 1;
+    addPart(uLegGeo, x, y - 0.26, 0);
+    addPart(lLegGeo, x, y - 0.77, 0);
+    addPart(footGeo, x, y - 1.04, 0.07);
+});
+
+const groundGeo = new THREE.CircleGeometry(1.2, 64);
+const groundMat = new THREE.MeshStandardMaterial({
+    color: 0x0F172A, roughness: 1, metalness: 0,
+    transparent: true, opacity: 0.6,
+});
+const ground = new THREE.Mesh(groundGeo, groundMat);
+ground.rotation.x = -Math.PI / 2;
+ground.position.y = -0.02;
+ground.receiveShadow = true;
+scene.add(ground);
+
+const ringGeo = new THREE.RingGeometry(0.8, 1.2, 64);
+const ringMat = new THREE.MeshBasicMaterial({
+    color: 0xC084FC, transparent: true, opacity: 0.15, side: THREE.DoubleSide,
+});
+const ring = new THREE.Mesh(ringGeo, ringMat);
+ring.rotation.x = -Math.PI / 2;
+ring.position.y = 0.01;
+scene.add(ring);
+
+if (IMAGE_URL) {
+    const loader = new THREE.TextureLoader();
+    loader.crossOrigin = 'anonymous';
+    loader.load(
+        IMAGE_URL,
+        (texture) => {
+            const aspect = texture.image.width / texture.image.height;
+            const planeH = 1.8;
+            const planeW = planeH * aspect;
+            const planeGeo = new THREE.PlaneGeometry(planeW, planeH);
+            const planeMat = new THREE.MeshStandardMaterial({
+                map: texture,
+                transparent: true,
+                roughness: 0.4,
+                metalness: 0.05,
+                side: THREE.DoubleSide,
+            });
+            const plane = new THREE.Mesh(planeGeo, planeMat);
+            plane.position.set(0, 1.3, 0.01);
+            mannequinGroup.add(plane);
+        },
+        undefined,
+        () => { console.warn('Image non chargeable, mannequin seul affiché.'); }
+    );
+}
+
+let isDragging    = false;
+let isPanning     = false;
+let lastX = 0, lastY = 0;
+let rotY = 0, rotX = 0;
+let panX = 0, panY = 0;
+let zoom = 3.8;
+
+const canvas = renderer.domElement;
+
+canvas.addEventListener('mousedown', (e) => {
+    if (e.button === 2) { isPanning = true; }
+    else                { isDragging = true; }
+    lastX = e.clientX; lastY = e.clientY;
+});
+canvas.addEventListener('mousemove', (e) => {
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    if (isDragging) {
+        rotY += dx * 0.008;
+        rotX += dy * 0.006;
+        rotX = Math.max(-Math.PI/3, Math.min(Math.PI/3, rotX));
+    }
+    if (isPanning) {
+        panX -= dx * 0.003;
+        panY += dy * 0.003;
+    }
+    lastX = e.clientX; lastY = e.clientY;
+});
+window.addEventListener('mouseup', () => { isDragging = false; isPanning = false; });
+canvas.addEventListener('wheel', (e) => {
+    zoom += e.deltaY * 0.005;
+    zoom = Math.max(1.5, Math.min(8, zoom));
+    e.preventDefault();
+}, { passive: false });
+
+canvas.addEventListener('contextmenu', (e) => e.preventDefault());
+
+canvas.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+        isDragging = true;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
+    }
+}, { passive: true });
+canvas.addEventListener('touchmove', (e) => {
+    if (isDragging && e.touches.length === 1) {
+        const dx = e.touches[0].clientX - lastX;
+        const dy = e.touches[0].clientY - lastY;
+        rotY += dx * 0.008;
+        rotX += dy * 0.006;
+        rotX = Math.max(-Math.PI/3, Math.min(Math.PI/3, rotX));
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
+    }
+}, { passive: true });
+canvas.addEventListener('touchend', () => { isDragging = false; });
+
+function resetCamera() {
+    rotY = 0; rotX = 0; panX = 0; panY = 0; zoom = 3.8;
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+let t = 0;
+function animate() {
+    requestAnimationFrame(animate);
+    t += 0.01;
+
+    ring.rotation.z += 0.005;
+    ring.material.opacity = 0.10 + Math.sin(t * 1.5) * 0.05;
+
+    mannequinGroup.rotation.y = rotY;
+    mannequinGroup.rotation.x = rotX;
+    mannequinGroup.position.x = panX;
+    mannequinGroup.position.y = panY;
+
+    camera.position.set(
+        panX,
+        1.2 + panY,
+        zoom
+    );
+    camera.lookAt(panX, 1.0 + panY, 0);
+
+    renderer.render(scene, camera);
+}
+animate();
+</script>
+</body>
+</html>
