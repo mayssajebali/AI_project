@@ -18,6 +18,7 @@ import urllib.request
 import urllib.parse
 import urllib.error
 import os
+import base64
 
 
 # ============================================================
@@ -27,8 +28,8 @@ import os
 POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt"
 
 # Dimensions de l'image générée (ratio portrait pour un outfit)
-IMAGE_WIDTH = 384
-IMAGE_HEIGHT = 512
+IMAGE_WIDTH = 284
+IMAGE_HEIGHT = 412
 
 # Dossier de sauvegarde des images générées
 OUTPUT_DIR = "generated_outfits"
@@ -304,6 +305,23 @@ def generate_outfit_image_url(outfit, intent):
     return url
 
 
+def fetch_image_data_uri(url):
+    if not url:
+        return None
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0"
+    })
+    try:
+        with urllib.request.urlopen(req) as resp:
+            data = resp.read()
+            mime = resp.headers.get_content_type() or "image/jpeg"
+            encoded = base64.b64encode(data).decode("ascii")
+            return f"data:{mime};base64,{encoded}"
+    except Exception as e:
+        print(f"[ImageGen] Erreur fetch_image_data_uri : {e}")
+        return None
+
+
 def download_outfit_image(outfit, intent, filename=None):
     """
     Télécharge l'image générée et la sauvegarde localement.
@@ -390,7 +408,8 @@ def generate_image_for_outfit(outfit, intent, save_local=True):
         "local_path": None,
         "prompt": prompt,
         "success": True,
-        "error": None
+        "error": None,
+        "image_data_uri": fetch_image_data_uri(url)
     }
 
     if save_local:

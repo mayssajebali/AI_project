@@ -71,6 +71,7 @@ def event_for_tools(event):
 # ============================================================
 
 def parse_closet_items(closet_text=None):
+    """Garde pour compatibilité texte legacy. Retourne liste de strings."""
     if not closet_text:
         return []
     raw_items = closet_text.replace("\n", ",").split(",")
@@ -80,6 +81,75 @@ def parse_closet_items(closet_text=None):
         if cleaned:
             items.append(cleaned)
     return items
+
+
+# ── Wardrobe match helpers ──────────────────────────────────
+
+def _style_matches(item_style, intent_style, intent_event):
+    """Vérifie si le style d'une pièce correspond au style demandé.
+    Strict : une pièce soirée ne sort jamais pour casual, et vice-versa.
+    Seule exception : style 'autre' = utilisable partout.
+    """
+    if not item_style or item_style == "autre":
+        return True  # "autre" ou non renseigné = universel
+
+    target = intent_style or intent_event or "casual"
+
+    accepted_pieces = {
+        "casual":     {"casual"},
+        "universite": {"casual"},
+        "chic":       {"chic"},
+        "travail":    {"travail", "chic"},
+        "soutenance": {"travail", "chic"},
+        "entretien":  {"travail", "chic"},
+        "soiree":     {"soiree"},
+        "mariage":    {"mariage", "soiree"},
+        "sport":      {"sport"},
+        "plage":      {"casual", "sport"},
+        "boheme":     {"boheme"},
+    }
+    allowed = accepted_pieces.get(target, {target})
+    return item_style in allowed
+
+
+def _genre_matches(item_genre, intent_gender):
+    if not item_genre or item_genre == "unisex":
+        return True
+    if not intent_gender:
+        return True
+    return item_genre == intent_gender
+
+
+def find_matching_wardrobe_pieces(wardrobe_dicts, intent):
+    """
+    wardrobe_dicts : liste de dicts structurés depuis get_wardrobe_items()
+                     chaque dict a : id, name, category, color, brand, size,
+                                     genre, style, use_in_outfit, notes
+    Retourne les pièces dont le style ET le genre matchent la demande.
+    """
+    matched = []
+    for item in wardrobe_dicts:
+        if not item.get("use_in_outfit", True):
+            continue  # exclues explicitement par l'utilisateur
+        item_style = item.get("style", "autre")
+        item_genre = item.get("genre", "unisex")
+        if not _style_matches(item_style, intent.get("style"), intent.get("event")):
+            continue
+        if not _genre_matches(item_genre, intent.get("gender")):
+            continue
+        # Construire un label lisible
+        label = item["name"]
+        if item.get("color"):
+            label += f" {item['color']}"
+        if item.get("brand"):
+            label += f" ({item['brand']})"
+        matched.append({
+            "name":     label,
+            "category": item.get("category", detect_item_category(item["name"])),
+            "style":    item_style,
+            "genre":    item_genre,
+        })
+    return matched
 
 
 def detect_item_category(item):
@@ -148,10 +218,27 @@ def detect_missing_pieces(event, gender, closet_analysis):
 
 
 def attach_closet_to_intent(intent, closet_items=None):
-    parsed_items = parse_closet_items(closet_items)
-    intent["closet_items"] = parsed_items
+    """
+    closet_items peut être :
+      - une liste de dicts structurés (depuis get_wardrobe_items)  ← mode principal
+      - une string texte legacy                                     ← fallback
+    """
+    # Normaliser en liste de strings pour closet_analysis (gap analyzer)
+    if isinstance(closet_items, list) and closet_items and isinstance(closet_items[0], dict):
+        wardrobe_dicts = closet_items
+        parsed_items = [
+            (it["name"] + (" " + it["color"] if it.get("color") else "")).strip().lower()
+            for it in wardrobe_dicts
+        ]
+    else:
+        wardrobe_dicts = []
+        parsed_items = parse_closet_items(closet_items)
+
+    intent["closet_items"]    = parsed_items
     intent["closet_analysis"] = None
-    intent["gap_analysis"] = None
+    intent["gap_analysis"]    = None
+    intent["matched_wardrobe"] = []
+
     if parsed_items and intent.get("wants_outfit"):
         closet_analysis = analyze_closet(parsed_items)
         intent["closet_analysis"] = closet_analysis
@@ -160,6 +247,10 @@ def attach_closet_to_intent(intent, closet_items=None):
             gender=intent.get("gender"),
             closet_analysis=closet_analysis
         )
+        # Matching sur les dicts structurés si disponibles, sinon liste vide
+        if wardrobe_dicts:
+            intent["matched_wardrobe"] = find_matching_wardrobe_pieces(wardrobe_dicts, intent)
+
     return intent
 
 
@@ -467,9 +558,10 @@ def _generate_visuals(outfit, intent):
         )
 
         visual["image_url"] = image_result.get("url")
+        visual["image_data"] = image_result.get("image_data_uri")
         visual["image_path"] = image_result.get("local_path")
         visual["prompt"] = image_result.get("prompt")
-        visual["image_ok"] = image_result.get("url") is not None
+        visual["image_ok"] = bool(image_result.get("url") or image_result.get("image_data_uri"))
 
         print(f"[Agent] URL image : {visual['image_url']}")
 
@@ -590,13 +682,13 @@ def build_response(results, intent, steps=None):
     style_label = display_label(intent.get("style"))
     closet_items = intent.get("closet_items", [])
     gap_analysis = intent.get("gap_analysis")
+    matched_wardrobe = intent.get("matched_wardrobe", [])
 
     # --------------------------------------------------------
     # Résumé intelligent
     # --------------------------------------------------------
-    lines.append("### Résumé intelligent")
-    lines.append(f"- Style détecté : **{style_label}**")
-    lines.append(f"- Événement détecté : **{event_label}**")
+    lines.append(f"🧠 Style détecté : **{style_label}**")
+    lines.append(f"🗓️ Événement détecté : **{event_label}**")
 
     if intent["budget"]:
         lines.append(f"- Budget détecté : **{intent['budget']} DT**")
@@ -621,22 +713,10 @@ def build_response(results, intent, steps=None):
     if "deals" in results:
         used_tools.append("Négociation / deals")
     if results.get("visual", {}).get("image_ok"):
-        used_tools.append("🖼️ Visual Generator")
+        used_tools.append("\U0001f5bc\ufe0f Visual Generator")
 
     lines.append(f"- Tools utilisés : **{', '.join(used_tools)}**")
     lines.append("")
-
-    # --------------------------------------------------------
-    # Wardrobe Twin
-    # --------------------------------------------------------
-    if intent["wants_outfit"] and closet_items:
-        lines.append("### Wardrobe Twin")
-        lines.append("L'agent a détecté les pièces que tu possèdes déjà :")
-        for item in closet_items[:8]:
-            lines.append(f"- {item}")
-        if len(closet_items) > 8:
-            lines.append(f"- ... et {len(closet_items) - 8} autre(s) pièce(s)")
-        lines.append("")
 
     # --------------------------------------------------------
     # Closet Gap Analyzer
@@ -646,7 +726,7 @@ def build_response(results, intent, steps=None):
         covered = gap_analysis.get("covered", [])
         missing = gap_analysis.get("missing", [])
 
-        lines.append("### Closet Gap Analyzer")
+        lines.append("📊 Closet Gap Analyzer")
         lines.append(f"Pour **{event_label}**, une tenue cohérente demande : **{', '.join(required)}**.")
         if covered:
             lines.append(f"- Pièces déjà couvertes par ta garde-robe : **{', '.join(covered)}**")
@@ -659,19 +739,33 @@ def build_response(results, intent, steps=None):
         lines.append("")
 
     # --------------------------------------------------------
+    # Pièces garde-robe compatibles avec le look
+    # --------------------------------------------------------
+    if intent["wants_outfit"] and matched_wardrobe:
+        lines.append("✨ Pièces de ta garde-robe compatibles avec ce look")
+        by_cat = {}
+        for p in matched_wardrobe:
+            cat = p["category"]
+            by_cat.setdefault(cat, []).append(p["name"])
+        for cat, names in by_cat.items():
+            lines.append(f"- **{cat.capitalize()}** : {', '.join(names[:3])}")
+        lines.append("→ Ces pièces peuvent remplacer ou compléter les suggestions du catalogue.")
+        lines.append("")
+
+    # --------------------------------------------------------
     # Introduction section principale
     # --------------------------------------------------------
     if intent["wants_outfit"]:
-        intro = f"### Tenue proposée pour {event_label}"
+        intro = f"👗 Tenue proposée pour {event_label}"
         if intent["budget"]:
             intro += f" — budget **{intent['budget']} DT**"
         lines.append(intro)
         lines.append("")
     elif intent["wants_styling"]:
-        lines.append(f"### Suggestions pour un look {style_label} ({event_label})")
+        lines.append(f"✨ Suggestions pour un look {style_label} ({event_label})")
         lines.append("")
     else:
-        lines.append("### Produits recommandés")
+        lines.append("🛍️ Produits recommandés")
         lines.append("")
 
     # --------------------------------------------------------
@@ -690,9 +784,17 @@ def build_response(results, intent, steps=None):
         compared_display = compared
 
     if compared and not intent["wants_outfit"]:
-        lines.append("### Meilleurs choix")
+        lines.append("🏆 Meilleurs choix")
+        # Index des catégories déjà couvertes par la garde-robe
+        wardrobe_cats = {p["category"] for p in matched_wardrobe}
         for i, product in enumerate(compared_display[:3], start=1):
-            lines.append(format_product_block(product, intent, i))
+            block = format_product_block(product, intent, i)
+            # Signaler si la garde-robe couvre déjà cette catégorie
+            prod_cat = product.get("category", "")
+            if prod_cat and prod_cat in wardrobe_cats:
+                matching_pieces = [p["name"] for p in matched_wardrobe if p["category"] == prod_cat]
+                block += f"\n   - 👗 Garde-robe : tu possèdes déjà **{', '.join(matching_pieces[:2])}** dans cette catégorie"
+            lines.append(block)
             lines.append("")
 
     # --------------------------------------------------------
@@ -700,7 +802,7 @@ def build_response(results, intent, steps=None):
     # --------------------------------------------------------
     styling = results.get("styling")
     if styling:
-        lines.append("### Conseil style")
+        lines.append("💡 Conseil style")
         lines.append(styling["tip"])
         lines.append("")
 
@@ -709,11 +811,27 @@ def build_response(results, intent, steps=None):
     # --------------------------------------------------------
     outfit = results.get("outfit")
     if outfit:
-        lines.append("### Tenue complète")
-        lines.append(f"- Haut : **{outfit['top']}**")
-        lines.append(f"- Bas : **{outfit['bottom']}**")
-        lines.append(f"- Chaussures : **{outfit['shoes']}**")
-        lines.append(f"- Accessoire : **{outfit['accessory']}**")
+        lines.append("👚 Tenue complète")
+
+        # Construire un index des pièces garde-robe par catégorie
+        wardrobe_by_cat = {}
+        for p in matched_wardrobe:
+            wardrobe_by_cat.setdefault(p["category"], []).append(p["name"])
+
+        def outfit_line(label, key, cat):
+            catalogue_val = outfit.get(key, "Non disponible")
+            owned = wardrobe_by_cat.get(cat, [])
+            if owned:
+                return (
+                    f"- {label} : **{catalogue_val}** "
+                    f"*(ou ta garde-robe : {', '.join(owned[:2])})*"
+                )
+            return f"- {label} : **{catalogue_val}**"
+
+        lines.append(outfit_line("Haut", "top", "haut"))
+        lines.append(outfit_line("Bas", "bottom", "pantalon"))
+        lines.append(outfit_line("Chaussures", "shoes", "chaussures"))
+        lines.append(outfit_line("Accessoire", "accessory", "accessoire"))
         lines.append(f"- Total estimé : **{format_price(outfit['total_price'])}**")
 
         outfit_regret = anti_regret_analyzer(outfit=outfit, intent=intent)
@@ -740,27 +858,14 @@ def build_response(results, intent, steps=None):
         lines.append(f"- Conseil : {outfit_regret['advice']}")
         lines.append("")
 
-    # --------------------------------------------------------
-    # Visual Preview
-    # --------------------------------------------------------
-    visual = results.get("visual")
-    if visual and visual.get("image_ok") and visual.get("image_url"):
-        lines.append("### Visual Outfit Preview")
-        lines.append(f"- 🖼️ Image générée par IA (Pollinations.AI)")
-        lines.append(f"- URL : {visual['image_url']}")
-        if visual.get("image_path"):
-            lines.append(f"- Fichier local : {visual['image_path']}")
-        if visual.get("prompt"):
-            short_prompt = visual["prompt"][:100] + "..." if len(visual["prompt"]) > 100 else visual["prompt"]
-            lines.append(f"- Prompt visuel : _{short_prompt}_")
-        lines.append("")
+
 
     # --------------------------------------------------------
     # Options alternatives
     # --------------------------------------------------------
     outfit_options = results.get("outfit_options", [])
     if outfit_options and intent["wants_outfit"]:
-        lines.append("### Options alternatives")
+        lines.append("🔁 Options alternatives")
         for option in outfit_options:
             outfit_data = option["outfit"]
             missing = outfit_data.get("missing_items", [])
@@ -779,7 +884,7 @@ def build_response(results, intent, steps=None):
     # --------------------------------------------------------
     deals = results.get("deals", [])
     if deals:
-        lines.append("### Meilleures offres du moment")
+        lines.append("💰 Meilleures offres du moment")
         for deal in deals:
             lines.append(
                 f"- {deal['name']} : {deal['original_price']} DT -> "
@@ -798,7 +903,7 @@ def build_response(results, intent, steps=None):
     # --------------------------------------------------------
     # Décision finale
     # --------------------------------------------------------
-    lines.append("### Décision finale de l'agent")
+    lines.append("✅ Conclusion de l'agent")
     if intent["budget"]:
         lines.append("- J'ai privilégié les choix cohérents avec ton budget.")
     else:
@@ -867,6 +972,84 @@ def apply_defaults(intent):
     return intent
 
 
+def is_off_topic(message, intent):
+    """Retourne True si le message n'a aucun signal lié à la mode/shopping."""
+    msg = normalize_text(message)
+
+    # Salutations et messages sociaux
+    if re.search(r"^(bonjour|bonsoir|salut|coucou|hello|hi|hey|slt|bjr|bsr|cc)[\s!?.]*$", msg):
+        return True
+
+    # Messages hors-sujet évidents
+    if re.search(r"météo|weather|foot|football|sport\s*(score|match|résultat)|politique|nouvelles|news|blague|joke|qui\s+es\s+tu|comment\s+tu\s+t'appelles|merci|thank|ok\s*$|d'accord|super\s*$|parfait\s*$|cool\s*$", msg):
+        return True
+
+    # Aucun signal mode/shopping détecté
+    has_fashion_signal = (
+        intent["wants_styling"]
+        or intent["wants_search"]
+        or intent["wants_outfit"]
+        or intent["wants_deal"]
+        or intent["budget"]
+        or intent["event"]
+        or intent["style"]
+        or intent["category"]
+        or intent["gender"]
+        or intent["color"]
+        or intent["brand"]
+        or intent["size"]
+    )
+    return not has_fashion_signal
+
+
+OFF_TOPIC_RESPONSES = [
+    (
+        "👋 Bonjour ! Je suis ton **styliste IA personnel**.\n\n"
+        "Je ne peux pas t'aider sur ce sujet, mais je peux te proposer :\n"
+        "- Une tenue complète adaptée à ton occasion\n"
+        "- Les meilleures offres du moment\n"
+        "- Des conseils style personnalisés\n\n"
+        "Essaie : **tenue chic femme 150 DT** ou **look casual homme 100 DT** 👗"
+    ),
+    (
+        "👗 La mode, c'est mon domaine !\n\n"
+        "Je ne suis pas fait pour ça, mais je peux t'aider à trouver **le look parfait** pour aujourd'hui.\n\n"
+        "Quelques idées pour commencer :\n"
+        "- **tenue casual femme 100 DT** — pour un look quotidien\n"
+        "- **outfit chic homme 150 DT** — pour une occasion spéciale\n"
+        "- **look soirée 200 DT** — pour sortir ce soir\n\n"
+        "Dis-moi ce dont tu as besoin 👆"
+    ),
+    (
+        "✨ Mon domaine c'est la mode, pas ça !\n\n"
+        "Mais je serais ravi de t'aider à composer ta tenue du jour.\n\n"
+        "Par exemple, dis-moi :\n"
+        "- Quelle est l'occasion ? *(travail, soirée, université…)*\n"
+        "- Ton budget ?\n"
+        "- Homme ou femme ?\n\n"
+        "Je m'occupe du reste 🛍️"
+    ),
+
+]
+
+_off_topic_counter = 0
+
+def get_off_topic_response():
+    global _off_topic_counter
+    response = OFF_TOPIC_RESPONSES[_off_topic_counter % len(OFF_TOPIC_RESPONSES)]
+    _off_topic_counter += 1
+    return {"text": response}
+
+
+    if intent.get("event") is None:
+        intent["event"] = "casual"
+    if intent.get("style") is None:
+        intent["style"] = "casual"
+    if intent.get("gender") is None:
+        intent["gender"] = "femme"
+    return intent
+
+
 def run_agent(user_message, closet_items=None):
     global _pending_intent
 
@@ -876,6 +1059,11 @@ def run_agent(user_message, closet_items=None):
 
     intent = analyze_intent(user_message)
 
+    # ── Détection hors-sujet ──────────────────────────────
+    if is_off_topic(user_message, intent):
+        _pending_intent = None  # reset tout contexte en cours
+        return get_off_topic_response()
+
     if _pending_intent is not None:
         intent = merge_intents(_pending_intent, intent)
         _pending_intent = None
@@ -884,24 +1072,30 @@ def run_agent(user_message, closet_items=None):
 
     if "budget" in missing:
         _pending_intent = intent
-        return (
-            "Pour construire une tenue complète adaptée, peux-tu préciser ton budget ?\n\n"
-            "Exemples : **100 DT**, **150 DT** ou **300 DT**."
-        )
+        return {
+            "text": (
+                "Pour construire une tenue complète adaptée, peux-tu préciser ton budget ?\n\n"
+                "Exemples : **100 DT**, **150 DT** ou **300 DT**."
+            )
+        }
 
     if "genre" in missing:
         _pending_intent = intent
-        return (
-            "Pour mieux choisir les produits, peux-tu préciser si la tenue est pour **homme** ou **femme** ?\n\n"
-            "Exemple : **tenue chic femme 150dt** ou **tenue chic homme 150dt**."
-        )
+        return {
+            "text": (
+                "Pour mieux choisir les produits, peux-tu préciser si la tenue est pour **homme** ou **femme** ?\n\n"
+                "Exemple : **tenue chic femme 150dt** ou **tenue chic homme 150dt**."
+            )
+        }
 
     if "occasion" in missing:
         _pending_intent = intent
-        return (
-            "Pour éviter une tenue trop générique, peux-tu préciser l'occasion ?\n\n"
-            "Exemples : **soutenance**, **mariage**, **soirée**, **travail**, **université** ou **casual**."
-        )
+        return {
+            "text": (
+                "Pour éviter une tenue trop générique, peux-tu préciser l'occasion ?\n\n"
+                "Exemples : **soutenance**, **mariage**, **soirée**, **travail**, **université** ou **casual**."
+            )
+        }
 
     intent = apply_defaults(intent)
     intent = attach_closet_to_intent(intent, closet_items)
@@ -923,7 +1117,14 @@ def run_agent(user_message, closet_items=None):
         results = {}
 
     final_response = build_response(results, intent, steps)
-    return final_response
+    visual = results.get("visual", {})
+    image_url = visual.get("image_url", "")
+    image_inline = visual.get("image_data") or image_url
+    return {
+        "text": final_response,
+        "image": image_inline,
+        "image_url": image_url
+    }
 
 
 # ============================================================
@@ -941,7 +1142,8 @@ if __name__ == "__main__":
     for title, message, closet in tests:
         print(f"\n{'#' * 55}\n  {title}\n{'#' * 55}")
         response = run_agent(message, closet_items=closet)
-        print(f"\n{'-' * 55}\n  RÉPONSE :\n{'-' * 55}\n{response}")
+        response_text = response['text'] if isinstance(response, dict) else response
+        print(f"\n{'-' * 55}\n  RÉPONSE :\n{'-' * 55}\n{response_text}")
 
     while True:
         user_message = input("\nToi : ")
@@ -950,4 +1152,5 @@ if __name__ == "__main__":
             break
         closet = input("Ta garde-robe (optionnel) : ")
         response = run_agent(user_message, closet_items=closet)
-        print(f"\n{'-' * 55}\n{response}")
+        response_text = response['text'] if isinstance(response, dict) else response
+        print(f"\n{'-' * 55}\n{response_text}")

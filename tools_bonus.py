@@ -533,18 +533,18 @@ def outfit_builder(
     gender=None,
     color=None,
     products=None,
-    strict_budget=True
+    strict_budget=True,
+    closet_items=None
 ):
     """
     Construit une tenue complète à partir des vrais produits.
 
     Fonctionnement :
-    1. Prend les produits envoyés par orchestrator.py
-    2. Sinon charge catalogue.json
-    3. Sélectionne les pièces une par une
-    4. Respecte le budget restant
-    5. Si une pièce dépasse le budget, elle est ignorée
-    6. Retourne aussi les pièces manquantes
+    1. Analyse la garde-robe (closet_items) : si une pièce match la catégorie requise,
+       elle est utilisée gratuitement (prix = 0), le budget restant augmente.
+    2. Pour les pièces manquantes dans la garde-robe : cherche dans le catalogue.
+    3. Respecte le budget restant pour les achats.
+    4. Retourne les pièces de la garde-robe utilisées dans closet_used.
     """
 
     event = normalize_event(event)
@@ -555,18 +555,62 @@ def outfit_builder(
     else:
         catalogue = load_catalogue()
 
-    outfit_items = {}
-    total_price = 0
+    outfit_items  = {}
+    total_price   = 0
     missing_items = []
+    closet_used   = {}  # { "top": "Blazer crème Zara", ... }
+
+    # ── Parser les pièces de la garde-robe ──────────────────
+    # closet_items est un texte CSV : "Blazer crème Zara, Robe noire Mango (Mango)"
+    # On construit une liste de noms normalisés pour la correspondance
+    closet_names = []
+    if closet_items:
+        closet_names = [
+            item.strip().lower()
+            for item in closet_items.split(",")
+            if item.strip()
+        ]
+
+    # Mapping catégorie → mots-clés pour matcher la garde-robe
+    CATEGORY_KEYWORDS = {
+        "haut":       ["blazer", "chemise", "haut", "top", "pull", "veste", "sweat", "cardigan", "blouson", "manteau", "t-shirt"],
+        "pantalon":   ["pantalon", "jean", "jupe", "legging", "short", "cargo"],
+        "robe":       ["robe"],
+        "chaussures": ["chaussure", "sneaker", "basket", "escarpin", "bott", "sandale", "mocassin"],
+        "sac":        ["sac", "clutch", "tote", "pochette", "backpack"],
+        "accessoire": ["ceinture", "lunette", "bijou", "collier", "bracelet", "chapeau", "montre", "écharpe", "bonnet"],
+    }
+
+    def find_in_closet(category):
+        """Retourne le nom de la pièce de la garde-robe qui match la catégorie, ou None."""
+        keywords = CATEGORY_KEYWORDS.get(category, [])
+        for item_name in closet_names:
+            for kw in keywords:
+                if kw in item_name:
+                    return item_name  # match trouvé
+        return None
 
     categories = get_outfit_categories(event=event, gender=gender)
 
     for key, category in categories:
         remaining_budget = None
-
         if budget is not None:
             remaining_budget = budget - total_price
 
+        # ── Vérifier la garde-robe d'abord ──────────────────
+        closet_match = find_in_closet(category)
+
+        if closet_match:
+            # Pièce trouvée dans la garde-robe → utiliser gratuitement
+            display_name = closet_match.title() + " ✨ (ta garde-robe)"
+            outfit_items[key] = {"name": display_name, "final_price": 0}
+            closet_used[key]  = closet_match.title()
+            # Pas d'ajout au total_price (déjà possédé)
+            # Retirer de closet_names pour ne pas réutiliser la même pièce
+            closet_names.remove(closet_match)
+            continue
+
+        # ── Pas dans la garde-robe → chercher dans le catalogue ──
         selected = select_best_product(
             catalogue=catalogue,
             category=category,
@@ -585,15 +629,16 @@ def outfit_builder(
             missing_items.append(category)
 
     return {
-        "top": outfit_items.get("top", {}).get("name", "Non trouvé"),
-        "bottom": outfit_items.get("bottom", {}).get("name", "—"),
-        "shoes": outfit_items.get("shoes", {}).get("name", "Non trouvé"),
-        "accessory": outfit_items.get("accessory", {}).get("name", "Non trouvé"),
+        "top":         outfit_items.get("top",       {}).get("name", "Non trouvé"),
+        "bottom":      outfit_items.get("bottom",    {}).get("name", "—"),
+        "shoes":       outfit_items.get("shoes",     {}).get("name", "Non trouvé"),
+        "accessory":   outfit_items.get("accessory", {}).get("name", "Non trouvé"),
         "total_price": round(total_price, 2),
-        "source": "catalogue.json",
-        "details": outfit_items,
+        "source":      "catalogue.json",
+        "details":     outfit_items,
         "missing_items": missing_items,
-        "is_complete": len(missing_items) == 0
+        "is_complete": len(missing_items) == 0,
+        "closet_used": closet_used,   # pièces réutilisées depuis la garde-robe
     }
 
 
@@ -662,16 +707,13 @@ def negotiate_deal(products=None):
 # 9. OPTIONS ALTERNATIVES : ÉCONOMIQUE / RECOMMANDÉ / STYLÉE
 # ============================================================
 
-def generate_outfit_options(event=None, style=None, budget=None, gender=None, color=None, products=None):
+def generate_outfit_options(event=None, style=None, budget=None, gender=None, color=None, products=None, closet_items=None):
     """
     Génère 3 options de looks :
     - Économique : respecte un budget plus petit.
     - Recommandé : respecte le budget utilisateur.
     - Alternative stylée : peut utiliser un budget plus large.
-
-    Remarque :
-    On évite le mot "Premium", car parfois l'option stylée peut coûter moins cher
-    si le catalogue contient une meilleure combinaison moins chère.
+    Dans chaque option, les pièces de la garde-robe sont réutilisées si elles matchent.
     """
 
     event = normalize_event(event)
@@ -681,36 +723,24 @@ def generate_outfit_options(event=None, style=None, budget=None, gender=None, co
 
     economic_budget = round(base_budget * 0.65)
     balanced_budget = base_budget
-    stylish_budget = round(base_budget * 1.3)
+    stylish_budget  = round(base_budget * 1.3)
 
     economic = outfit_builder(
-        event=event,
-        style=style,
-        budget=economic_budget,
-        gender=gender,
-        color=color,
-        products=products,
-        strict_budget=True
+        event=event, style=style, budget=economic_budget,
+        gender=gender, color=color, products=products,
+        strict_budget=True, closet_items=closet_items
     )
 
     balanced = outfit_builder(
-        event=event,
-        style=style,
-        budget=balanced_budget,
-        gender=gender,
-        color=color,
-        products=products,
-        strict_budget=True
+        event=event, style=style, budget=balanced_budget,
+        gender=gender, color=color, products=products,
+        strict_budget=True, closet_items=closet_items
     )
 
     stylish = outfit_builder(
-        event=event,
-        style=style,
-        budget=stylish_budget,
-        gender=gender,
-        color=color,
-        products=products,
-        strict_budget=False
+        event=event, style=style, budget=stylish_budget,
+        gender=gender, color=color, products=products,
+        strict_budget=False, closet_items=closet_items
     )
 
     return [
