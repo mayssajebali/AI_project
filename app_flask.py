@@ -6,6 +6,12 @@
 from flask import Flask, request, jsonify, render_template, session
 from flask_cors import CORS
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
+from outfit_analyzer import analyze_outfit_image
+
+
 
 from orchestrator import run_agent
 from database import (
@@ -225,6 +231,48 @@ def api_delete_wardrobe(item_id):
 # ============================================================
 #  LANCEMENT
 # ============================================================
+
+
+# ── Ajoutez cet import en haut de app_flask.py ─────────────
+# from outfit_analyzer import analyze_outfit_image
+
+@app.route("/api/analyze-outfit", methods=["POST"])
+def api_analyze_outfit():
+    if "user_id" not in session:
+        return jsonify({"error": "Non connecté"}), 401
+
+    data       = request.json
+    image_b64  = data.get("image", "")
+    image_type = data.get("image_type", "image/jpeg")
+    user_msg   = data.get("message", "").strip()
+    session_id = data.get("session_id")
+
+    if not image_b64:
+        return jsonify({"error": "Image manquante"}), 400
+
+    if not session_id:
+        session_id = create_session(
+            session["user_id"],
+            f"Analyse outfit — {user_msg[:40] or 'Photo de tenue'}"
+        )
+
+    save_message(session_id, "user", user_msg or "📸 Photo de tenue envoyée")
+
+    try:
+        result = analyze_outfit_image(image_b64, image_type, user_msg)
+    except Exception as e:
+        return jsonify({"error": f"Erreur d'analyse : {str(e)}"}), 500
+
+    save_message(session_id, "assistant", result["text"])
+
+    return jsonify({
+        "session_id":         session_id,
+        "text":               result["text"],
+        "suggestions":        result.get("suggestions", []),
+        "is_outfit_analysis": True,
+        "image_url":          result.get("image_url", ""),
+        "image":              result.get("image", ""),
+    })
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
